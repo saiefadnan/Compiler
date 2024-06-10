@@ -1,5 +1,5 @@
 # Compiler
-its a c subset compiler
+Its a c subset compiler
 # lexical analysis
 run command:
 **(installing flex is must !!!)
