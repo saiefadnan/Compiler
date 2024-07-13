@@ -194,7 +194,7 @@ SymbolTable *table;
 
 
 "//"(.*)?				{fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);}
-"/*"[^*/]*("*/")?		{
+"/*"[^"*/"]*("*/")?		{
 							fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
 							char res[yyleng-1]={'\0'};
 							for(int i=0;i<yyleng;++i){
@@ -230,11 +230,12 @@ SymbolTable *table;
 										error++;
 									}
 
+
 %%
 
 int main(){
 	table=new SymbolTable();
-	yyin=fopen("in.txt","r");
+	yyin=fopen("sample_input3.txt","r");
 	yyout=fopen("202214091_token.txt","w");
 	logout=fopen("202214091_log.txt","w");
 	yylex();

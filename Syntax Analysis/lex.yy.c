@@ -285,42 +285,41 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 46
-#define YY_END_OF_BUFFER 47
-static yyconst short int yy_accept[131] =
+#define YY_NUM_RULES 42
+#define YY_END_OF_BUFFER 43
+static yyconst short int yy_accept[119] =
     {   0,
-        0,    0,   47,   45,   39,   40,   27,   22,   45,   45,
-       28,   29,   21,   34,   21,   44,   22,   19,   35,   24,
-       25,   24,   36,   36,   32,   33,   36,   36,   36,   36,
-       36,   36,   36,   36,   36,   36,   30,   45,   31,   39,
-       24,   26,   41,    0,   23,   44,   17,    0,   38,   37,
-       44,   19,   42,   42,   36,   43,   36,   36,   36,   36,
-       36,   36,    5,   36,   36,   36,    1,   36,   36,   36,
-       36,   36,   20,   44,    0,    0,   38,    0,   37,    0,
-       18,   43,   36,   36,   36,   36,   36,   36,   36,   36,
-        3,    7,   36,   36,   36,   36,    0,   17,   38,   18,
+        0,    0,   43,   41,    1,    2,   29,   24,   41,   41,
+       30,   31,   23,   36,   23,   41,   24,   21,   37,   26,
+       27,   26,   38,   34,   35,   38,   38,   38,   38,   38,
+       38,   38,   38,   38,   38,   32,   41,   33,    1,   26,
+       28,    0,   25,   19,   40,   39,    0,   21,    0,   38,
+       38,   38,   38,   38,   38,    7,   38,   38,   38,    3,
+       38,   38,   38,   38,   38,   22,    0,   40,    0,   39,
+        0,   20,   38,   38,   38,   38,   38,   38,   38,   38,
+        5,    9,   38,   38,   38,   38,    0,   19,   40,   38,
+       17,   10,   38,   38,   38,    4,   38,   38,   38,   13,
 
-       36,   15,    8,   36,   36,   36,    2,   36,   36,   36,
-       11,   36,   17,    6,   36,   36,   36,    9,   36,   36,
-        4,   36,   36,   10,   12,   13,   36,   14,   16,    0
+       38,    8,   38,   38,   38,   11,   38,   38,    6,   38,
+       38,   12,   14,   15,   38,   16,   18,    0
     } ;
 
 static yyconst int yy_ec[256] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
-        1,    1,    2,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    4,    5,    1,    1,    6,    7,    8,    9,
-       10,   11,   12,   13,   14,   15,   16,   17,   17,   17,
-       17,   17,   17,   17,   17,   17,   17,    1,   18,   19,
-       20,   21,    1,    1,   22,   22,   22,   22,   23,   22,
-       22,   22,   22,   22,   22,   22,   22,   22,   22,   22,
-       22,   22,   22,   22,   22,   22,   22,   22,   22,   22,
-       24,    1,   25,    1,   26,    1,   27,   28,   29,   30,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    2,    4,    1,    1,    1,    5,    6,    7,    8,
+        9,   10,   11,   12,   13,   14,   15,   16,   16,   16,
+       16,   16,   16,   16,   16,   16,   16,    1,   17,   18,
+       19,   20,    1,    1,   21,   21,   21,   21,   22,   21,
+       21,   21,   21,   21,   21,   21,   21,   21,   21,   21,
+       21,   21,   21,   21,   21,   21,   21,   21,   21,   21,
+       23,    1,   24,    1,   25,    1,   26,   27,   28,   29,
 
-       31,   32,   22,   33,   34,   22,   35,   36,   22,   37,
-       38,   22,   22,   39,   40,   41,   42,   43,   44,   22,
-       22,   22,   45,   46,   47,    1,    1,    1,    1,    1,
+       30,   31,   21,   32,   33,   21,   34,   35,   21,   36,
+       37,   21,   21,   38,   39,   40,   41,   42,   43,   21,
+       21,   21,   44,   45,   46,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -337,111 +336,101 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[48] =
+static yyconst int yy_meta[47] =
     {   0,
-        1,    1,    2,    1,    3,    1,    1,    4,    1,    1,
-        1,    1,    1,    1,    5,    3,    6,    1,    1,    1,
-        1,    7,    7,    1,    1,    6,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    1,    1,    1
+        1,    1,    2,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    3,    4,    1,    1,    1,    1,
+        5,    5,    1,    1,    4,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
+        5,    5,    5,    1,    1,    1
     } ;
 
-static yyconst short int yy_base[136] =
+static yyconst short int yy_base[123] =
     {   0,
-        0,    0,  187,  188,  184,  188,  165,  188,  177,  175,
-      188,  188,  170,  188,  167,   33,   38,   36,  188,  160,
-      159,  158,    0,   40,  188,  188,  138,   25,   29,  140,
-       26,   29,  144,  130,  135,  139,  188,  125,  188,  168,
-      188,  188,  188,  161,  188,   53,   54,   57,  157,    0,
-       58,   61,  152,   68,    0,  149,   71,  134,  124,  136,
-      125,  129,  118,  119,  120,  118,    0,  115,  114,  120,
-      119,  118,  188,   72,   78,   79,  140,  134,    0,  132,
-       82,  131,  120,  115,  106,  103,  116,  114,  110,  113,
-        0,    0,   97,   97,  107,  100,  118,   83,  188,  117,
+        0,    0,  151,  152,  148,  152,  130,  152,  142,    0,
+      152,  152,  136,  152,  133,  129,   37,   34,  152,  125,
+      124,  123,    0,  152,  152,  103,   23,   21,  105,   22,
+       30,  109,   95,  100,  104,  152,   90,  152,  132,  152,
+      152,  126,  152,   46,  122,    0,  115,   49,   56,    0,
+      100,   90,  102,   91,   95,   84,   85,   86,   84,    0,
+       81,   80,   86,   85,   84,  152,   62,  106,  100,    0,
+       98,   97,   86,   81,   72,   69,   82,   80,   76,   79,
+        0,    0,   63,   63,   73,   66,   84,   83,  152,   64,
+        0,    0,   64,   55,   60,    0,   54,   55,   64,    0,
 
-       98,    0,    0,   98,   89,   94,    0,   88,   89,   98,
-        0,   95,  108,    0,   87,   82,   81,    0,   66,   69,
-        0,   49,   38,    0,    0,    0,   34,    0,    0,  188,
-       97,  100,  102,  109,  116
+       61,    0,   51,   48,   47,    0,   40,   42,    0,   29,
+       24,    0,    0,    0,   24,    0,    0,  152,   48,   75,
+       80,   85
     } ;
 
-static yyconst short int yy_def[136] =
+static yyconst short int yy_def[123] =
     {   0,
-      130,    1,  130,  130,  130,  130,  130,  130,  130,  131,
-      130,  130,  130,  130,  130,  130,  130,  132,  130,  130,
-      130,  130,  133,  133,  130,  130,  133,  133,  133,  133,
-      133,  133,  133,  133,  133,  133,  130,  130,  130,  130,
-      130,  130,  130,  130,  130,  130,  130,  130,  134,  135,
-      130,  132,  132,  132,  133,  130,  133,  133,  133,  133,
-      133,  133,  133,  133,  133,  133,  133,  133,  133,  133,
-      133,  133,  130,  130,  130,  130,  134,  130,  135,  130,
-      132,  130,  133,  133,  133,  133,  133,  133,  133,  133,
-      133,  133,  133,  133,  133,  133,  130,  130,  130,  130,
+      118,    1,  118,  118,  118,  118,  118,  118,  118,  119,
+      118,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  120,  118,  118,  120,  120,  120,  120,  120,
+      120,  120,  120,  120,  120,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  121,  122,  118,  118,  118,  120,
+      120,  120,  120,  120,  120,  120,  120,  120,  120,  120,
+      120,  120,  120,  120,  120,  118,  118,  121,  118,  122,
+      118,  118,  120,  120,  120,  120,  120,  120,  120,  120,
+      120,  120,  120,  120,  120,  120,  118,  118,  118,  120,
+      120,  120,  120,  120,  120,  120,  120,  120,  120,  120,
 
-      133,  133,  133,  133,  133,  133,  133,  133,  133,  133,
-      133,  133,  130,  133,  133,  133,  133,  133,  133,  133,
-      133,  133,  133,  133,  133,  133,  133,  133,  133,    0,
-      130,  130,  130,  130,  130
+      120,  120,  120,  120,  120,  120,  120,  120,  120,  120,
+      120,  120,  120,  120,  120,  120,  120,    0,  118,  118,
+      118,  118
     } ;
 
-static yyconst short int yy_nxt[236] =
+static yyconst short int yy_nxt[199] =
     {   0,
-        4,    5,    6,    7,    4,    8,    9,   10,   11,   12,
-        8,   13,   14,   15,   16,   17,   18,   19,   20,   21,
-       22,   23,   24,   25,   26,   23,   23,   27,   28,   29,
-       30,   31,   23,   32,   23,   23,   23,   23,   33,   34,
-       23,   23,   35,   36,   37,   38,   39,   46,   49,   47,
-       51,   59,   52,   50,   56,   48,   57,   60,   54,   62,
-       67,   65,   61,   66,  129,   68,   63,   46,   46,   74,
-       47,   56,   46,   76,   47,   51,   75,   52,  128,   80,
-       48,   80,   56,   54,   81,   56,   46,   57,   74,   97,
-      127,   97,   56,   56,   98,   76,   56,   56,   81,   98,
+        4,    5,    6,    7,    8,    9,   10,   11,   12,    8,
+       13,   14,   15,   16,   17,   18,   19,   20,   21,   22,
+       23,   23,   24,   25,   23,   23,   26,   27,   28,   29,
+       30,   23,   31,   23,   23,   23,   23,   32,   33,   23,
+       23,   34,   35,   36,   37,   38,   45,   47,   52,   48,
+       55,   46,   42,  117,   53,   49,   58,   56,   59,   54,
+       60,   44,   47,  116,   48,   61,   71,   67,   71,  115,
+       49,   72,   87,  114,   87,  113,  112,   88,   50,   50,
+       68,   68,  111,   68,   68,   70,  110,   70,   70,   70,
+      109,  108,  107,  106,  105,  104,  103,  102,   88,   88,
 
-       44,  126,  125,   44,   53,   53,   53,   55,   55,   77,
-       77,  124,   77,   77,   77,   77,   79,  123,   79,   79,
-       79,   79,   79,  122,  113,  121,  120,  119,  118,  117,
-      116,  115,  114,  100,  113,  112,  111,  110,  109,  108,
-      107,  106,  105,  104,  103,  102,  101,   82,  100,   99,
-       78,   96,   95,   94,   93,   92,   91,   90,   89,   88,
-       87,   86,   85,   84,   83,   82,  130,   78,   73,   40,
-       42,   72,   71,   70,   69,   64,   58,   41,   41,   41,
-       45,   45,   43,   42,   41,   40,  130,    3,  130,  130,
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
+      101,  100,   99,   98,   97,   96,   95,   94,   93,   92,
+       91,   90,   72,   72,   89,   69,   86,   85,   84,   83,
+       82,   81,   80,   79,   78,   77,   76,   75,   74,   73,
+       44,   69,   66,   39,   41,   65,   64,   63,   62,   57,
+       51,   40,   40,   40,   44,   43,   43,   41,   40,   39,
+      118,    3,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118
 
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
-      130,  130,  130,  130,  130
     } ;
 
-static yyconst short int yy_chk[236] =
+static yyconst short int yy_chk[199] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,   16,   17,   16,
-       18,   28,   18,   17,   24,   16,   24,   28,   18,   29,
-       32,   31,   28,   31,  127,   32,   29,   46,   47,   46,
-       47,   48,   51,   48,   51,   52,   47,   52,  123,   54,
-       51,   54,   54,   52,   54,   57,   74,   57,   74,   75,
-      122,   75,   75,   76,   75,   76,   81,   98,   81,   98,
+        1,    1,    1,    1,    1,    1,   17,   18,   27,   18,
+       28,   17,  119,  115,   27,   18,   30,   28,   30,   27,
+       31,   44,   48,  111,   48,   31,   49,   44,   49,  110,
+       48,   49,   67,  108,   67,  107,  105,   67,  120,  120,
+      121,  121,  104,  121,  121,  122,  103,  122,  122,  122,
+      101,   99,   98,   97,   95,   94,   93,   90,   88,   87,
 
-      131,  120,  119,  131,  132,  132,  132,  133,  133,  134,
-      134,  117,  134,  134,  134,  134,  135,  116,  135,  135,
-      135,  135,  135,  115,  113,  112,  110,  109,  108,  106,
-      105,  104,  101,  100,   97,   96,   95,   94,   93,   90,
-       89,   88,   87,   86,   85,   84,   83,   82,   80,   78,
-       77,   72,   71,   70,   69,   68,   66,   65,   64,   63,
-       62,   61,   60,   59,   58,   56,   53,   49,   44,   40,
-       38,   36,   35,   34,   33,   30,   27,   22,   21,   20,
-       15,   13,   10,    9,    7,    5,    3,  130,  130,  130,
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
+       86,   85,   84,   83,   80,   79,   78,   77,   76,   75,
+       74,   73,   72,   71,   69,   68,   65,   64,   63,   62,
+       61,   59,   58,   57,   56,   55,   54,   53,   52,   51,
+       47,   45,   42,   39,   37,   35,   34,   33,   32,   29,
+       26,   22,   21,   20,   16,   15,   13,    9,    7,    5,
+        3,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118,  118,  118,
+      118,  118,  118,  118,  118,  118,  118,  118
 
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
-      130,  130,  130,  130,  130,  130,  130,  130,  130,  130,
-      130,  130,  130,  130,  130
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -458,13 +447,14 @@ char *yytext;
 #line 1 "scanner.l"
 #define INITIAL 0
 #line 3 "scanner.l"
-#include<stdio.h>
+#include "parser.tab.h"
+#include<stdlib.h>
 #include "SymbolTable.h"
+FILE *logout;
+SymbolTable *table = new SymbolTable();
 int line=1;
 int error=0;
-FILE* logout;
-SymbolTable *table;
-#line 468 "lex.yy.c"
+#line 458 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -615,11 +605,11 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 11 "scanner.l"
+#line 13 "scanner.l"
 
 
 
-#line 623 "lex.yy.c"
+#line 613 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -670,13 +660,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 131 )
+				if ( yy_current_state >= 119 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 188 );
+		while ( yy_base[yy_current_state] != 152 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -704,394 +694,452 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "scanner.l"
-{
-				fprintf(yyout,"<IF>");
-				fprintf(logout,"Line No: %d Token <IF> Lexeme %s found\n",line,yytext);
-			}
+#line 16 "scanner.l"
+{}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 18 "scanner.l"
+#line 19 "scanner.l"
 {
-				fprintf(yyout,"<ELSE>");
-				fprintf(logout,"Line No: %d Token <ELSE> Lexeme %s found\n",line,yytext);
-			}
+                            printf("NEWLINE\n");
+                            line++;
+                            return NEWLINE;
+                        }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 22 "scanner.l"
+#line 25 "scanner.l"
 {
-				fprintf(yyout,"<FOR>");
-				fprintf(logout,"Line No: %d Token <FOR> Lexeme %s found\n",line,yytext);
+				//fprintf(yyout,"<IF>");
+				// fprintf(logout,"Line No: %d Token <IF> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return IF;
 			}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 26 "scanner.l"
+#line 31 "scanner.l"
 {
-				fprintf(yyout,"<WHILE>");
-				fprintf(logout,"Line No: %d Token <WHILE> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<ELSE>");
+				// fprintf(logout,"Line No: %d Token <ELSE> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return ELSE;
 			}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 30 "scanner.l"
+#line 37 "scanner.l"
 {
-				fprintf(yyout,"<DO>");
-				fprintf(logout,"Line No: %d Token <DO> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<FOR>");
+				// fprintf(logout,"Line No: %d Token <FOR> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return FOR;
 			}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 34 "scanner.l"
+#line 43 "scanner.l"
 {
-				fprintf(yyout,"<BREAK>");
-				fprintf(logout,"Line No: %d Token <BREAK> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<WHILE>");
+				// fprintf(logout,"Line No: %d Token <WHILE> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return WHILE;
 			}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 38 "scanner.l"
+#line 49 "scanner.l"
 {
-				fprintf(yyout,"<INT>");
-				fprintf(logout,"Line No: %d Token <INT> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<DO>");
+				// fprintf(logout,"Line No: %d Token <DO> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return DO;
 			}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 42 "scanner.l"
+#line 55 "scanner.l"
 {
-				fprintf(yyout,"<CHAR>");
-				fprintf(logout,"Line No: %d Token <CHAR> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<BREAK>");
+				// fprintf(logout,"Line No: %d Token <BREAK> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return BREAK;
 			}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 46 "scanner.l"
+#line 61 "scanner.l"
 {
-				fprintf(yyout,"<FLOAT>");
-				fprintf(logout,"Line No: %d Token <FLOAT> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<INT>");
+				// fprintf(logout,"Line No: %d Token <INT> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return INT;
 			}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 50 "scanner.l"
+#line 67 "scanner.l"
 {
-				fprintf(yyout,"<DOUBLE>");
-				fprintf(logout,"Line No: %d Token <DOUBLE> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<CHAR>");
+				// fprintf(logout,"Line No: %d Token <CHAR> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return CHAR;
 			}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 54 "scanner.l"
+#line 73 "scanner.l"
 {
-				fprintf(yyout,"<VOID>");
-				fprintf(logout,"Line No: %d Token <VOID> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<FLOAT>");
+				// fprintf(logout,"Line No: %d Token <FLOAT> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return FLOAT;
 			}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 58 "scanner.l"
+#line 79 "scanner.l"
 {
-				fprintf(yyout,"<RETURN>");
-				fprintf(logout,"Line No: %d Token <RETURN> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<DOUBLE>");
+				// fprintf(logout,"Line No: %d Token <DOUBLE> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return DOUBLE;
 			}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 62 "scanner.l"
+#line 85 "scanner.l"
 {
-				fprintf(yyout,"<SWITCH>");
-				fprintf(logout,"Line No: %d Token <SWITCH> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<VOID>");
+				// fprintf(logout,"Line No: %d Token <VOID> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return VOID;
 			}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 66 "scanner.l"
+#line 91 "scanner.l"
 {
-				fprintf(yyout,"<DEFAULT>");
-				fprintf(logout,"Line No: %d Token <DEFAULT> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<RETURN>");
+				// fprintf(logout,"Line No: %d Token <RETURN> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return RETURN;
 			}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 70 "scanner.l"
+#line 97 "scanner.l"
 {
-				fprintf(yyout,"<CASE>");
-				fprintf(logout,"Line No: %d Token <CASE> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<SWITCH>");
+				// fprintf(logout,"Line No: %d Token <SWITCH> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return SWITCH;
 			}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 74 "scanner.l"
+#line 103 "scanner.l"
 {
-				fprintf(yyout,"<CONTINUE>");
-				fprintf(logout,"Line No: %d Token <CONTINUE> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<DEFAULT>");
+				// fprintf(logout,"Line No: %d Token <DEFAULT> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return DEFAULT;
 			}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 80 "scanner.l"
+#line 109 "scanner.l"
 {
-									fprintf(yyout,"<CONST_FLOAT, %s>",yytext);
-									fprintf(logout,"Line No: %d Token <CONST_FLOAT> Lexeme %s found\n",line,yytext);
-									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_FLOAT");
-									if(table->Insert(sym))table->Print(logout);
-									else {
-										fprintf(logout,"%s variable already exists\n",yytext);
-										error++;
-									}
-								}
+				// fprintf(yyout,"<CASE>");
+				// fprintf(logout,"Line No: %d Token <CASE> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return CASE;
+			}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 90 "scanner.l"
+#line 115 "scanner.l"
 {
-									fprintf(yyout,"<CONST_FLOAT, %s>",yytext);
-									fprintf(logout,"Line No: %d Token <CONST_FLOAT> Lexeme %s found\n",line,yytext);
-									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_FLOAT");
-									if(table->Insert(sym))table->Print(logout);
-									else {
-										fprintf(logout,"%s variable already exists\n",yytext);
-										error++;
-									}
-								}
+				// fprintf(yyout,"<CONTINUE>");
+				// fprintf(logout,"Line No: %d Token <CONTINUE> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return CONTINUE;
+			}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 100 "scanner.l"
+#line 123 "scanner.l"
 {
-									fprintf(yyout,"<CONST_INT, %s>",yytext);
-									fprintf(logout,"Line No: %d Token <CONST_INT> Lexeme %s found\n",line,yytext);
-									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_INT");
-									if(table->Insert(sym))table->Print(logout);
-									else {
-										fprintf(logout,"%s variable already exists\n",yytext);
-										error++;
-									}
+									// fprintf(yyout,"<CONST_FLOAT, %s>",yytext);
+									// fprintf(logout,"Line No: %d Token <CONST_FLOAT> Lexeme %s found\n",line,yytext);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_FLOAT");
+                                    table->Insert(sym);
+                                    return CONST_FLOAT;
+									//if(table->Insert(sym))table->Print(logout);
+									// else {
+									// 	fprintf(logout,"%s variable already exists\n",yytext);
+									// 	error++;
+									// }
 								}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 110 "scanner.l"
+#line 136 "scanner.l"
 {
-									fprintf(yyout,"<CONST_CHAR, %c>",yytext[1]);
-									fprintf(logout,"Line No: %d Token <CONST_CHAR> Lexeme %c found\n",line,yytext[1]);
-									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_CHAR");
-									if(table->Insert(sym))table->Print(logout);
-									else {
-										fprintf(logout,"%s variable already exists\n",yytext);
-										error++;
-									}
+									// fprintf(yyout,"<CONST_FLOAT, %s>",yytext);
+									// fprintf(logout,"Line No: %d Token <CONST_FLOAT> Lexeme %s found\n",line,yytext);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_FLOAT");
+                                    table->Insert(sym);
+                                    return CONST_FLOAT;
+									//if(table->Insert(sym))table->Print(logout);
+									// else {
+									// 	fprintf(logout,"%s variable already exists\n",yytext);
+									// 	error++;
+									// }
 								}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 122 "scanner.l"
+#line 149 "scanner.l"
 {
-									fprintf(yyout,"<ADDOP, %s>",yytext);
-									fprintf(logout,"Line No: %d Token <ADDOP> Lexeme %s found\n",line,yytext);
+									// fprintf(yyout,"<CONST_INT, %s>",yytext);
+									// fprintf(logout,"Line No: %d Token <CONST_INT> Lexeme %s found\n",line,yytext);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_INT");
+                                    table->Insert(sym);
+                                    return CONST_INT;
+									//if(table->Insert(sym))table->Print(logout);
+									// else {
+									// 	fprintf(logout,"%s variable already exists\n",yytext);
+									// 	error++;
+									// }
 								}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 126 "scanner.l"
+#line 162 "scanner.l"
 {
-									fprintf(yyout,"<MULOP, %s>",yytext);
-									fprintf(logout,"Line No: %d Token <MULOP> Lexeme %s found\n",line,yytext);
+									// fprintf(yyout,"<CONST_CHAR, %c>",yytext[1]);
+									// fprintf(logout,"Line No: %d Token <CONST_CHAR> Lexeme %c found\n",line,yytext[1]);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_CHAR");
+                                    table->Insert(sym);
+                                    return CONST_CHAR;
+									//if(table->Insert(sym))table->Print(logout);
+									// else {
+									// 	fprintf(logout,"%s variable already exists\n",yytext);
+									// 	error++;
+									// }
 								}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 130 "scanner.l"
+#line 177 "scanner.l"
 {
-									fprintf(yyout,"<INCOP, %s>",yytext);
-									fprintf(logout,"Line No: %d Token <INCOP> Lexeme %s found\n",line,yytext);
+									// fprintf(yyout,"<ADDOP, %s>",yytext);
+									// fprintf(logout,"Line No: %d Token <ADDOP> Lexeme %s found\n",line,yytext);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+                                    printf("%s\n",yytext);
+                                    return ADDOP;
 								}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 134 "scanner.l"
+#line 184 "scanner.l"
 {
-									fprintf(yyout,"<RELOP, %s>",yytext);
-									fprintf(logout,"Line No: %d Token <RELOP> Lexeme %s found\n",line,yytext);
+									// fprintf(yyout,"<MULOP, %s>",yytext);
+									// fprintf(logout,"Line No: %d Token <MULOP> Lexeme %s found\n",line,yytext);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+                                    return MULOP;
 								}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 138 "scanner.l"
+#line 190 "scanner.l"
 {
-					fprintf(yyout,"<ASSIGNOP, %s>",yytext);
-					fprintf(logout,"Line No: %d Token <ASSIGNOP> Lexeme %s found\n",line,yytext);
-			}								
+									// fprintf(yyout,"<INCOP, %s>",yytext);
+									// fprintf(logout,"Line No: %d Token <INCOP> Lexeme %s found\n",line,yytext);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+                                    return INCOP;
+								}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 142 "scanner.l"
+#line 196 "scanner.l"
 {
-					fprintf(yyout,"<LOGICOP, %s>",yytext);
-					fprintf(logout,"Line No: %d Token <LOGICOP> Lexeme %s found\n",line,yytext);
-			}
+									// fprintf(yyout,"<RELOP, %s>",yytext);
+									// fprintf(logout,"Line No: %d Token <RELOP> Lexeme %s found\n",line,yytext);
+                                 //fprintf(yyout,"Line Number: %d\n",line);
+                                    return RELOP;
+								}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 146 "scanner.l"
+#line 202 "scanner.l"
 {
-				fprintf(yyout,"<NOT, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <NOT> Lexeme %s found\n",line,yytext);
-			}
+					// fprintf(yyout,"<ASSIGNOP, %s>",yytext);
+					// fprintf(logout,"Line No: %d Token <ASSIGNOP> Lexeme %s found\n",line,yytext);
+                 //fprintf(yyout,"Line Number: %d\n",line);
+                    printf("%s\n",yytext);
+                    return ASSIGNOP;
+			}								
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 150 "scanner.l"
+#line 209 "scanner.l"
 {
-				fprintf(yyout,"<LPAREN, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <LPAREN> Lexeme %s found\n",line,yytext);
+					// fprintf(yyout,"<LOGICOP, %s>",yytext);
+					// fprintf(logout,"Line No: %d Token <LOGICOP> Lexeme %s found\n",line,yytext);
+                 //fprintf(yyout,"Line Number: %d\n",line);
+                    return LOGICOP;
 			}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 154 "scanner.l"
+#line 215 "scanner.l"
 {
-				fprintf(yyout,"<RPAREN, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <RPAREN> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<NOT, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <NOT> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return NOT;
 			}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 158 "scanner.l"
+#line 221 "scanner.l"
 {
-				fprintf(yyout,"<LCURL, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <LCURL> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<LPAREN, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <LPAREN> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+             printf("%s\n",yytext);
+                return LPAREN;
 			}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 162 "scanner.l"
+#line 228 "scanner.l"
 {
-				fprintf(yyout,"<RCURL, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <RCURL> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<RPAREN, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <RPAREN> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+             printf("%s\n",yytext);
+                return RPAREN;
 			}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 166 "scanner.l"
+#line 235 "scanner.l"
 {
-				fprintf(yyout,"<LTHIRD, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <LTHIRD> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<LCURL, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <LCURL> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+             printf("%s\n",yytext);
+                return LCURL;
 			}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 170 "scanner.l"
+#line 242 "scanner.l"
 {
-				fprintf(yyout,"<RTHIRD, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <RTHIRD> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<RCURL, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <RCURL> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+             printf("%s\n",yytext);
+                return RCURL;
 			}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 174 "scanner.l"
+#line 249 "scanner.l"
 {
-				fprintf(yyout,"<COMMA, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <COMMA> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<LTHIRD, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <LTHIRD> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return LTHIRD;
 			}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 178 "scanner.l"
+#line 255 "scanner.l"
 {
-				fprintf(yyout,"<SEMICOLON, %s>",yytext);
-				fprintf(logout,"Line No: %d Token <SEMICOLON> Lexeme %s found\n",line,yytext);
+				// fprintf(yyout,"<RTHIRD, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <RTHIRD> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return RTHIRD;
 			}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 184 "scanner.l"
+#line 261 "scanner.l"
 {
-							fprintf(yyout,"<ID, %s>",yytext);
-							fprintf(logout,"Line No: %d Token <ID> Lexeme %s found\n",line,yytext);
-							SymbolInfo* sym=new SymbolInfo(yytext,"ID");
-							if(table->Insert(sym))table->Print(logout);
-							else {
-								fprintf(logout,"%s variable already exists\n",yytext);
-								error++;
-							}
-						}			
+				// fprintf(yyout,"<COMMA, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <COMMA> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+                return COMMA;
+			}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 196 "scanner.l"
-{fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);}
+#line 267 "scanner.l"
+{
+				// fprintf(yyout,"<SEMICOLON, %s>",yytext);
+				// fprintf(logout,"Line No: %d Token <SEMICOLON> Lexeme %s found\n",line,yytext);
+             //fprintf(yyout,"Line Number: %d\n",line);
+             printf("%s\n",yytext);
+                return SEMICOLON;
+			}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 197 "scanner.l"
+#line 276 "scanner.l"
 {
-							fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
+							// fprintf(yyout,"<ID, %s>",yytext);
+							// fprintf(logout,"Line No: %d Token <ID> Lexeme %s found\n",line,yytext);
+							SymbolInfo* sym=new SymbolInfo(yytext,"ID");
+							if(table->Insert(sym)){
+                            
+                            }
+							else {
+								fprintf(yyout,"%s  is already declared.\n",yytext);
+								error++;
+							}
+                            printf("Id matched %s\n",yytext);
+                            return ID;
+						}			
+	YY_BREAK
+case 39:
+YY_RULE_SETUP
+#line 292 "scanner.l"
+{   
+                         //fprintf(yyout,"Line Number: %d\n",line);
+                            //fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
+                        }
+	YY_BREAK
+case 40:
+YY_RULE_SETUP
+#line 296 "scanner.l"
+{
+							//fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
+                         //fprintf(yyout,"Line Number: %d\n",line);
 							char res[yyleng-1]={'\0'};
 							for(int i=0;i<yyleng;++i){
 								if(yytext[i]=='\n')line++;
 							}
 						}
 	YY_BREAK
-case 39:
-YY_RULE_SETUP
-#line 206 "scanner.l"
-{}
-	YY_BREAK
-case 40:
-YY_RULE_SETUP
-#line 209 "scanner.l"
-{line++;}
-	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 212 "scanner.l"
-{
-										fprintf(logout,"Error at Line No: %d Empty character constant %s\n",line,yytext);
-										error++;
-									}
+#line 306 "scanner.l"
+{printf("faltu %s\n",yytext);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 216 "scanner.l"
-{
-										fprintf(logout,"Error at line No: %d Invalid prefix on ID or invalid suffix on Number %s\n",line,yytext);
-										error++;
-									}
-	YY_BREAK
-case 43:
-YY_RULE_SETUP
-#line 220 "scanner.l"
-{
-										fprintf(logout,"Error at line No: %d Ill formed number %s\n",line,yytext);
-										error++;
-									}
-	YY_BREAK
-case 44:
-YY_RULE_SETUP
-#line 224 "scanner.l"
-{
-										fprintf(logout,"Error at line No: %d Ill formed number %s\n",line,yytext);
-										error++;
-									}
-	YY_BREAK
-case 45:
-YY_RULE_SETUP
-#line 228 "scanner.l"
-{
-										fprintf(logout,"Error at Line No: %d Unrecognized character %s\n",line,yytext);
-										error++;
-									}
-	YY_BREAK
-case 46:
-YY_RULE_SETUP
-#line 234 "scanner.l"
+#line 308 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 1095 "lex.yy.c"
+#line 1143 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1383,7 +1431,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 131 )
+			if ( yy_current_state >= 119 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1418,11 +1466,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 131 )
+		if ( yy_current_state >= 119 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 130);
+	yy_is_jam = (yy_current_state == 118);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1977,18 +2025,60 @@ int main()
 	return 0;
 	}
 #endif
-#line 234 "scanner.l"
+#line 308 "scanner.l"
 
 
-int main(){
-	table=new SymbolTable();
-	yyin=fopen("sample_input3.txt","r");
-	yyout=fopen("202214091_token.txt","w");
-	logout=fopen("202214091_log.txt","w");
-	yylex();
-	fprintf(logout,"(Total errors found in the source code: %d)",error);
-	fclose(yyin);
-	fclose(yyout);
-	fclose(logout);
-	return 0;
-}
+
+// int main(){
+//     yyin=fopen("input.txt","r");
+//     yyout=fopen("log_error.txt","w");
+//     logout=fopen("log.txt","w");
+//     if(!logout)printf("Bye");
+//     yylex();
+//     table->Print(logout);
+//     printf("done");
+//     fclose(yyin);
+//     fclose(yyout);
+//     fclose(logout);
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ''									{
+// 										//fprintf(logout,"Error at Line No: %d Empty character constant %s\n",line,yytext);
+//                                      //fprintf(yyout,"Line Number: %d\n",line);
+// 										error++;
+// 									}
+// [0-9]+[a-zA-Z0-9_]+					{
+// 										//fprintf(logout,"Error at line No: %d Invalid prefix on ID or invalid suffix on Number %s\n",line,yytext);
+//                                      //fprintf(yyout,"Line Number: %d\n",line);
+// 										error++;
+// 									}
+// [0-9]*(\.[0-9]*)?E[0-9]*\.[0-9]*	{
+// 										//fprintf(logout,"Error at line No: %d Ill formed number %s\n",line,yytext);
+//                                      //fprintf(yyout,"Line Number: %d\n",line);
+// 										error++;
+// 									}
+// ([0-9]*\.[0-9]*)+					{
+// 										//fprintf(logout,"Error at line No: %d Ill formed number %s\n",line,yytext);
+//                                      //fprintf(yyout,"Line Number: %d\n",line);
+// 										error++;
+// 									}
+// .									{
+// 										//fprintf(logout,"Error at Line No: %d Unrecognized character %s\n",line,yytext);
+//                                      //fprintf(yyout,"Line Number: %d\n",line);
+// 										error++;
+// 									}

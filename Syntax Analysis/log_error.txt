@@ -1,0 +1,4 @@
+Line Number: 1
+type_spec: INT
+Line Number: 1
+term: ID
