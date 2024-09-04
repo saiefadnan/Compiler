@@ -1,6 +1,3 @@
-int hello(){
-    t=k+l;
-}
 float fun()
 {
 a=b+c;

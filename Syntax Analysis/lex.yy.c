@@ -1097,7 +1097,7 @@ YY_RULE_SETUP
 {
 							// fprintf(yyout,"<ID, %s>",yytext);
 							// fprintf(logout,"Line No: %d Token <ID> Lexeme %s found\n",line,yytext);
-							SymbolInfo* sym=new SymbolInfo(yytext,"ID");
+							SymbolInfo* sym=new SymbolInfo(yytext,"identifier");
 							if(table->Insert(sym)){
                             
                             }
@@ -1132,7 +1132,7 @@ YY_RULE_SETUP
 case 41:
 YY_RULE_SETUP
 #line 306 "scanner.l"
-{printf("faltu %s\n",yytext);}
+{}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP

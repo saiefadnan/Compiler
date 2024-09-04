@@ -194,13 +194,13 @@ SymbolTable *table;
 
 
 "//"(.*)?				{fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);}
-"/*"[^"*/"]*("*/")?		{
-							fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
-							char res[yyleng-1]={'\0'};
-							for(int i=0;i<yyleng;++i){
-								if(yytext[i]=='\n')line++;
-							}
-						}
+"/*"([^*]|\*[^/])*?("*/")?		{
+									fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
+									char res[yyleng-1]={'\0'};
+									for(int i=0;i<yyleng;++i){
+										if(yytext[i]=='\n')line++;
+									}
+								}
 
 
 [ \t\r]+				{}

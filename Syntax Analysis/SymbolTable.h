@@ -75,7 +75,9 @@ class SymbolTable{
             fprintf(logout,"%d -->",i);
             for(int j=0;j<1000;++j){
                 if(hash_table[i][j].getSymbol()=="")break;
-                fprintf(logout,"<%s,%s>",hash_table[i][j].getType().c_str(),hash_table[i][j].getSymbol().c_str());
+                if(hash_table[i][j].getType()=="identifier"){
+                    fprintf(logout,"<%s %s>",hash_table[i][j].getSymbol().c_str(), hash_table[i][j].getType().c_str());
+                }
             }
             fprintf(logout,"\n");
         }

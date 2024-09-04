@@ -276,7 +276,7 @@ int error=0;
 [a-zA-Z_][a-zA-Z0-9_]*	{
 							// fprintf(yyout,"<ID, %s>",yytext);
 							// fprintf(logout,"Line No: %d Token <ID> Lexeme %s found\n",line,yytext);
-							SymbolInfo* sym=new SymbolInfo(yytext,"ID");
+							SymbolInfo* sym=new SymbolInfo(yytext,"identifier");
 							if(table->Insert(sym)){
                             
                             }
@@ -303,7 +303,7 @@ int error=0;
 						}
 
 
-.                       {printf("faltu %s\n",yytext);}
+.                       {}
 
 %%
 
