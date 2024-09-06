@@ -6,14 +6,27 @@ extern SymbolTable *table;
 extern int line,error;
 int yylex();
 void yyerror(const char* s){
-    printf("Line no: %d %s\n",line,s);
+    fprintf(yyout,"%s \nLine Number: %d \n",s,line);
 }
 %}
 
+%union{
+    int ivar;
+    float fvar;
+    double dvar;
+    char cvar;
+    char *svar;
+}
+
+%token <ivar> CONST_INT
+%token <fvar> CONST_FLOAT
+%token <cvar> CONST_CHAR
+%token <svar> ID
+
 %token IF ELSE FOR WHILE DO BREAK VOID RETURN SWITCH DEFAULT CASE CONTINUE  
-%token ID CONST_CHAR CONST_INT CONST_FLOAT CHAR INT FLOAT DOUBLE
+%token CHAR INT FLOAT DOUBLE
 %token INCOP RELOP LOGICOP NOT ASSIGNOP ADDOP MULOP
-%token LPAREN RPAREN LCURL RCURL LTHIRD RTHIRD COMMA SEMICOLON NEWLINE
+%token LPAREN RPAREN LCURL RCURL LTHIRD RTHIRD COMMA SEMICOLON
 
 %left ADDOP
 %left MULOP
@@ -26,25 +39,20 @@ void yyerror(const char* s){
 %%
 
 mul_stmt: mul_stmt func_decl                                {   
-                                                                fprintf(yyout,"Line Number: %d\n",line);
-                                                                fprintf(yyout,"mul_stmt: mul_stmt func_decl\n");
+                                                                //fprintf(yyout,"Line Number: %d\n",line);
+                                                                //fprintf(yyout,"mul_stmt: mul_stmt func_decl\n");
                                                             }
 |func_decl                                                  {
-                                                                fprintf(yyout,"Line Number: %d\n",line);
-                                                                fprintf(yyout,"mul_stmt: func_decl\n");
-                                                            }                                                                                                                                                     
+                                                                //fprintf(yyout,"Line Number: %d\n",line);
+                                                                //fprintf(yyout,"mul_stmt: func_decl\n");
+                                                            }
+|error                                                     {yyerrok;yyclearin;}                                                                                                                                                           
 ;
 
 func_decl: type_spec term LPAREN RPAREN LCURL stmt RCURL            {   
                                                                         fprintf(yyout,"Line Number: %d\n",line);
                                                                         fprintf(yyout,"func_decl: type_spec term LPAREN RPAREN LCURL stmt RCURL\n");
-                                                                    }
-
-func_decl: type_spec term LPAREN RPAREN line LCURL stmt RCURL       {   
-                                                                        fprintf(yyout,"Line Number: %d\n",line);
-                                                                        fprintf(yyout,"func_decl: type_spec term LPAREN RPAREN LCURL stmt RCURL\n");
-                                                                    }                                                  
-|line
+                                                                    }                                                                                                                                                                                          
 ;                                                           
 
 stmt: stmt unit                                             {
@@ -54,39 +62,39 @@ stmt: stmt unit                                             {
 |unit                                                       {
                                                                 fprintf(yyout,"Line Number: %d\n",line);
                                                                 fprintf(yyout,"stmt: unit\n");
-                                                            }
-|error                                                      {yyerrok;}                                                                                                            
+                                                            }                                                                                                                                                         
 ; 
 
-unit: var_decl NEWLINE                                  {
+unit: var_decl                                          {
                                                             fprintf(yyout,"Line Number: %d\n",line);
-                                                            fprintf(yyout,"unit: var_decl NEWLINE\n");
+                                                            fprintf(yyout,"unit: var_decl \n");
                                                         }
-|expr_decl NEWLINE                                      {
+|expr_decl                                              {
                                                             fprintf(yyout,"Line Number: %d\n",line);
-                                                            fprintf(yyout,"unit: expr_decl NEWLINE\n");
-                                                        }                                                                                                                                                                      
+                                                            fprintf(yyout,"unit: expr_decl \n");
+                                                        }
+|error                                                  { yyerrok;}                                                                                                                                                                                                                              
 ;
 
 var_decl: type_spec decl_list SEMICOLON                 {
                                                             fprintf(yyout,"Line Number: %d\n",line);
                                                             fprintf(yyout,"var_decl: type_spec decl_list SEMICOLON\n");
-                                                        }
-|error                                                  {yyerrok;}                                                                                                                                 
+                                                        }                                                                                                                                 
 ;
 
-type_spec: INT                                              {
-                                                                fprintf(yyout,"Line Number: %d\n",line);
-                                                                fprintf(yyout,"type_spec: INT\n");
-                                                            }
-|FLOAT                                                      {
-                                                                fprintf(yyout,"Line Number: %d\n",line);
-                                                                fprintf(yyout,"type_spec: FLOAT\n");
-                                                            }
+type_spec: INT                                          {
+                                                            fprintf(yyout,"Line Number: %d\n",line);
+                                                            fprintf(yyout,"type_spec: INT\n");
+                                                        }
+|FLOAT                                                  {
+                                                            fprintf(yyout,"Line Number: %d\n",line);
+                                                            fprintf(yyout,"type_spec: FLOAT\n");
+                                                        }
 |DOUBLE                                                     {
                                                                 fprintf(yyout,"Line Number: %d\n",line);
                                                                 fprintf(yyout,"type_spec: DOUBLE\n");
-                                                            }
+                                                            }                                                           
+;                                                           
 
 decl_list: decl_list COMMA term                             {   
                                                                 fprintf(yyout,"Line Number: %d\n",line);
@@ -106,15 +114,14 @@ decl_list: decl_list COMMA term                             {
                                                             }
 |ass_list                                                   {
                                                                 fprintf(yyout,"Line Number: %d\n",line);
-                                                                fprintf(yyout,"ass_list\n");
+                                                                fprintf(yyout,"decl_list: ass_list\n");
                                                             }
 ;
 
 ass_list: term ASSIGNOP expr                                {
                                                                 fprintf(yyout,"Line Number: %d\n",line);
                                                                 fprintf(yyout,"ass_list: term ASSIGNOP expr\n");
-                                                            }
-|line                                                                                                                
+                                                            }                                                                                                       
 ;
 
 expr: CONST_INT                                 {
@@ -149,45 +156,48 @@ expr: CONST_INT                                 {
                                                     fprintf(yyout,"Line Number: %d\n",line);
                                                     fprintf(yyout,"expr: NOT expr\n");
                                                 }
-|LPAREN expr ADDOP expr RPAREN                           {
+|LPAREN expr RPAREN                             {   
                                                     fprintf(yyout,"Line Number: %d\n",line);
-                                                    fprintf(yyout,"expr: expr ADDOP expr\n");
+                                                    fprintf(yyout,"expr: LPAREN expr RPAREN\n");
                                                 }
-|LPAREN expr MULOP expr RPAREN                                {
-                                                    fprintf(yyout,"Line Number: %d\n",line);
-                                                    fprintf(yyout,"expr: expr MULOP expr\n");
-                                                }
-|LPAREN expr RELOP expr RPAREN                          {   
-                                                    fprintf(yyout,"Line Number: %d\n",line);
-                                                    fprintf(yyout,"expr: expr RELOP expr\n");
-                                                }
-|LPAREN expr LOGICOP expr RPAREN                            {   
-                                                    fprintf(yyout,"Line Number: %d\n",line);
-                                                    fprintf(yyout,"expr: expr LOGICOP expr\n");
-                                                }
-|LPAREN NOT expr RPAREN                                       {   
-                                                    fprintf(yyout,"Line Number: %d\n",line);
-                                                    fprintf(yyout,"expr: NOT expr\n");
-                                                }  
+// |LPAREN expr ADDOP expr RPAREN                                {
+//                                                     fprintf(yyout,"Line Number: %d\n",line);
+//                                                     fprintf(yyout,"expr: LPAREN expr ADDOP expr RPAREN\n");
+//                                                 }
+// |LPAREN expr MULOP expr RPAREN                                {
+//                                                     fprintf(yyout,"Line Number: %d\n",line);
+//                                                     fprintf(yyout,"expr: LPAREN expr MULOP expr RPAREN\n");
+//                                                 }
+// |LPAREN expr INCOP RPAREN                                     {   
+//                                                     fprintf(yyout,"Line Number: %d\n",line);
+//                                                     fprintf(yyout,"expr: LPAREN expr INCOP RPAREN\n");
+//                                                 }
+// |LPAREN expr RELOP expr RPAREN                                {   
+//                                                     fprintf(yyout,"Line Number: %d\n",line);
+//                                                     fprintf(yyout,"expr: LPAREN expr RELOP expr RPAREN\n");
+//                                                 }
+// |LPAREN expr LOGICOP expr RPAREN                              {   
+//                                                     fprintf(yyout,"Line Number: %d\n",line);
+//                                                     fprintf(yyout,"expr: LPAREN expr LOGICOP expr RPAREN\n");
+//                                                 }
+// |LPAREN NOT expr RPAREN                                       {   
+//                                                     fprintf(yyout,"Line Number: %d\n",line);
+//                                                     fprintf(yyout,"expr: LPAREN NOT expr RPAREN\n");
+//                                                 }                                                                                               
 |term                                           {
                                                     fprintf(yyout,"Line Number: %d\n",line);
                                                     fprintf(yyout,"expr: term\n");
-                                                }
-|line                                                                                 
+                                                }                                                                                 
 ;                           
 
-term: ID                                        {
-                                                    fprintf(yyout,"Line Number: %d\n",line);
-                                                    fprintf(yyout,"term: ID\n");
-                                                }                                                          
+term: ID                                        {}                                                          
 ;
 
 expr_decl: term ASSIGNOP expr SEMICOLON         {
                                                     fprintf(yyout,"Line Number: %d\n",line);
                                                     fprintf(yyout,"expr_decl: term ASSIGNOP expr SEMICOLON\n");
-                                                }                                                                                                                
-;
-line: NEWLINE                                      {}                                
+                                                }                                                                                                           
+;                        
 
 %%
 

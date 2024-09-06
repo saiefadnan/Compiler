@@ -700,429 +700,229 @@ YY_RULE_SETUP
 case 2:
 YY_RULE_SETUP
 #line 19 "scanner.l"
-{
-                            printf("NEWLINE\n");
-                            line++;
-                            return NEWLINE;
-                        }
+{ line++; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "scanner.l"
-{
-				//fprintf(yyout,"<IF>");
-				// fprintf(logout,"Line No: %d Token <IF> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return IF;
-			}
+#line 21 "scanner.l"
+{ return IF;      }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 31 "scanner.l"
-{
-				// fprintf(yyout,"<ELSE>");
-				// fprintf(logout,"Line No: %d Token <ELSE> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return ELSE;
-			}
+#line 22 "scanner.l"
+{ return ELSE;    }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 37 "scanner.l"
-{
-				// fprintf(yyout,"<FOR>");
-				// fprintf(logout,"Line No: %d Token <FOR> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return FOR;
-			}
+#line 23 "scanner.l"
+{ return FOR;     }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 43 "scanner.l"
-{
-				// fprintf(yyout,"<WHILE>");
-				// fprintf(logout,"Line No: %d Token <WHILE> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return WHILE;
-			}
+#line 24 "scanner.l"
+{ return WHILE;   }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 49 "scanner.l"
-{
-				// fprintf(yyout,"<DO>");
-				// fprintf(logout,"Line No: %d Token <DO> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return DO;
-			}
+#line 25 "scanner.l"
+{ return DO;      }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 55 "scanner.l"
-{
-				// fprintf(yyout,"<BREAK>");
-				// fprintf(logout,"Line No: %d Token <BREAK> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return BREAK;
-			}
+#line 26 "scanner.l"
+{ return BREAK;   }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 61 "scanner.l"
-{
-				// fprintf(yyout,"<INT>");
-				// fprintf(logout,"Line No: %d Token <INT> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return INT;
-			}
+#line 27 "scanner.l"
+{ return INT;     }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 67 "scanner.l"
-{
-				// fprintf(yyout,"<CHAR>");
-				// fprintf(logout,"Line No: %d Token <CHAR> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return CHAR;
-			}
+#line 28 "scanner.l"
+{ return CHAR;    }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 73 "scanner.l"
-{
-				// fprintf(yyout,"<FLOAT>");
-				// fprintf(logout,"Line No: %d Token <FLOAT> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return FLOAT;
-			}
+#line 29 "scanner.l"
+{ return FLOAT;   }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 79 "scanner.l"
-{
-				// fprintf(yyout,"<DOUBLE>");
-				// fprintf(logout,"Line No: %d Token <DOUBLE> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return DOUBLE;
-			}
+#line 30 "scanner.l"
+{ return DOUBLE;  }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 85 "scanner.l"
-{
-				// fprintf(yyout,"<VOID>");
-				// fprintf(logout,"Line No: %d Token <VOID> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return VOID;
-			}
+#line 31 "scanner.l"
+{ return VOID;    }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 91 "scanner.l"
-{
-				// fprintf(yyout,"<RETURN>");
-				// fprintf(logout,"Line No: %d Token <RETURN> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return RETURN;
-			}
+#line 32 "scanner.l"
+{ return RETURN;  }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 97 "scanner.l"
-{
-				// fprintf(yyout,"<SWITCH>");
-				// fprintf(logout,"Line No: %d Token <SWITCH> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return SWITCH;
-			}
+#line 33 "scanner.l"
+{ return SWITCH;  }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 103 "scanner.l"
-{
-				// fprintf(yyout,"<DEFAULT>");
-				// fprintf(logout,"Line No: %d Token <DEFAULT> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return DEFAULT;
-			}
+#line 34 "scanner.l"
+{ return DEFAULT; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 109 "scanner.l"
-{
-				// fprintf(yyout,"<CASE>");
-				// fprintf(logout,"Line No: %d Token <CASE> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return CASE;
-			}
+#line 35 "scanner.l"
+{ return CASE;    }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 115 "scanner.l"
-{
-				// fprintf(yyout,"<CONTINUE>");
-				// fprintf(logout,"Line No: %d Token <CONTINUE> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return CONTINUE;
-			}
+#line 36 "scanner.l"
+{ return CONTINUE;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 123 "scanner.l"
+#line 39 "scanner.l"
 {
-									// fprintf(yyout,"<CONST_FLOAT, %s>",yytext);
-									// fprintf(logout,"Line No: %d Token <CONST_FLOAT> Lexeme %s found\n",line,yytext);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
 									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_FLOAT");
-                                    table->Insert(sym);
-                                    return CONST_FLOAT;
-									//if(table->Insert(sym))table->Print(logout);
-									// else {
-									// 	fprintf(logout,"%s variable already exists\n",yytext);
-									// 	error++;
-									// }
+									table->Insert(sym);
+									yylval.fvar = atof(yytext);
+									return CONST_FLOAT;
 								}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 136 "scanner.l"
+#line 45 "scanner.l"
 {
-									// fprintf(yyout,"<CONST_FLOAT, %s>",yytext);
-									// fprintf(logout,"Line No: %d Token <CONST_FLOAT> Lexeme %s found\n",line,yytext);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
 									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_FLOAT");
-                                    table->Insert(sym);
-                                    return CONST_FLOAT;
-									//if(table->Insert(sym))table->Print(logout);
-									// else {
-									// 	fprintf(logout,"%s variable already exists\n",yytext);
-									// 	error++;
-									// }
-								}
+									table->Insert(sym);
+									yylval.fvar = atof(yytext);
+									return CONST_FLOAT;
+								}													
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 149 "scanner.l"
+#line 52 "scanner.l"
 {
-									// fprintf(yyout,"<CONST_INT, %s>",yytext);
-									// fprintf(logout,"Line No: %d Token <CONST_INT> Lexeme %s found\n",line,yytext);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
 									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_INT");
                                     table->Insert(sym);
+									yylval.ivar = atoi(yytext);
                                     return CONST_INT;
-									//if(table->Insert(sym))table->Print(logout);
-									// else {
-									// 	fprintf(logout,"%s variable already exists\n",yytext);
-									// 	error++;
-									// }
 								}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 162 "scanner.l"
+#line 58 "scanner.l"
 {
-									// fprintf(yyout,"<CONST_CHAR, %c>",yytext[1]);
-									// fprintf(logout,"Line No: %d Token <CONST_CHAR> Lexeme %c found\n",line,yytext[1]);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
 									SymbolInfo* sym=new SymbolInfo(yytext,"CONST_CHAR");
                                     table->Insert(sym);
+									yylval.cvar = yytext[0];
                                     return CONST_CHAR;
-									//if(table->Insert(sym))table->Print(logout);
-									// else {
-									// 	fprintf(logout,"%s variable already exists\n",yytext);
-									// 	error++;
-									// }
 								}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 177 "scanner.l"
-{
-									// fprintf(yyout,"<ADDOP, %s>",yytext);
-									// fprintf(logout,"Line No: %d Token <ADDOP> Lexeme %s found\n",line,yytext);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
-                                    printf("%s\n",yytext);
-                                    return ADDOP;
-								}
+#line 66 "scanner.l"
+{ return ADDOP; 	}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 184 "scanner.l"
-{
-									// fprintf(yyout,"<MULOP, %s>",yytext);
-									// fprintf(logout,"Line No: %d Token <MULOP> Lexeme %s found\n",line,yytext);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
-                                    return MULOP;
-								}
+#line 67 "scanner.l"
+{ return MULOP; 	}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 190 "scanner.l"
-{
-									// fprintf(yyout,"<INCOP, %s>",yytext);
-									// fprintf(logout,"Line No: %d Token <INCOP> Lexeme %s found\n",line,yytext);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
-                                    return INCOP;
-								}
+#line 68 "scanner.l"
+{ return INCOP;		}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 196 "scanner.l"
-{
-									// fprintf(yyout,"<RELOP, %s>",yytext);
-									// fprintf(logout,"Line No: %d Token <RELOP> Lexeme %s found\n",line,yytext);
-                                 //fprintf(yyout,"Line Number: %d\n",line);
-                                    return RELOP;
-								}
+#line 69 "scanner.l"
+{ return RELOP; 	}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 202 "scanner.l"
-{
-					// fprintf(yyout,"<ASSIGNOP, %s>",yytext);
-					// fprintf(logout,"Line No: %d Token <ASSIGNOP> Lexeme %s found\n",line,yytext);
-                 //fprintf(yyout,"Line Number: %d\n",line);
-                    printf("%s\n",yytext);
-                    return ASSIGNOP;
-			}								
+#line 70 "scanner.l"
+{ return ASSIGNOP; 	}								
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 209 "scanner.l"
-{
-					// fprintf(yyout,"<LOGICOP, %s>",yytext);
-					// fprintf(logout,"Line No: %d Token <LOGICOP> Lexeme %s found\n",line,yytext);
-                 //fprintf(yyout,"Line Number: %d\n",line);
-                    return LOGICOP;
-			}
+#line 71 "scanner.l"
+{ return LOGICOP;   }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 215 "scanner.l"
-{
-				// fprintf(yyout,"<NOT, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <NOT> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return NOT;
-			}
+#line 72 "scanner.l"
+{ return NOT;		}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 221 "scanner.l"
-{
-				// fprintf(yyout,"<LPAREN, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <LPAREN> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-             printf("%s\n",yytext);
-                return LPAREN;
-			}
+#line 73 "scanner.l"
+{ return LPAREN;	}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 228 "scanner.l"
-{
-				// fprintf(yyout,"<RPAREN, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <RPAREN> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-             printf("%s\n",yytext);
-                return RPAREN;
-			}
+#line 74 "scanner.l"
+{ return RPAREN;	}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 235 "scanner.l"
-{
-				// fprintf(yyout,"<LCURL, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <LCURL> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-             printf("%s\n",yytext);
-                return LCURL;
-			}
+#line 75 "scanner.l"
+{ return LCURL;		}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 242 "scanner.l"
-{
-				// fprintf(yyout,"<RCURL, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <RCURL> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-             printf("%s\n",yytext);
-                return RCURL;
-			}
+#line 76 "scanner.l"
+{ return RCURL;		}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 249 "scanner.l"
-{
-				// fprintf(yyout,"<LTHIRD, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <LTHIRD> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return LTHIRD;
-			}
+#line 77 "scanner.l"
+{ return LTHIRD;	}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 255 "scanner.l"
-{
-				// fprintf(yyout,"<RTHIRD, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <RTHIRD> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return RTHIRD;
-			}
+#line 78 "scanner.l"
+{ return RTHIRD;	}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 261 "scanner.l"
-{
-				// fprintf(yyout,"<COMMA, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <COMMA> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-                return COMMA;
-			}
+#line 79 "scanner.l"
+{ return COMMA;		}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 267 "scanner.l"
-{
-				// fprintf(yyout,"<SEMICOLON, %s>",yytext);
-				// fprintf(logout,"Line No: %d Token <SEMICOLON> Lexeme %s found\n",line,yytext);
-             //fprintf(yyout,"Line Number: %d\n",line);
-             printf("%s\n",yytext);
-                return SEMICOLON;
-			}
+#line 80 "scanner.l"
+{ return SEMICOLON;	}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 276 "scanner.l"
+#line 83 "scanner.l"
 {
-							// fprintf(yyout,"<ID, %s>",yytext);
-							// fprintf(logout,"Line No: %d Token <ID> Lexeme %s found\n",line,yytext);
 							SymbolInfo* sym=new SymbolInfo(yytext,"identifier");
-							if(table->Insert(sym)){
-                            
+							if(!table->Insert(sym)){
+								fprintf(yyout,"%s is already declared.\n",yytext);
+								error++;
                             }
 							else {
-								fprintf(yyout,"%s  is already declared.\n",yytext);
-								error++;
+								fprintf(yyout,"Line Number: %d\n",line);
+                                fprintf(yyout,"term: ID\n");
+								yylval.svar = yytext;
 							}
-                            printf("Id matched %s\n",yytext);
-                            return ID;
+							return ID;
 						}			
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 292 "scanner.l"
-{   
-                         //fprintf(yyout,"Line Number: %d\n",line);
-                            //fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
-                        }
+#line 98 "scanner.l"
+{}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 296 "scanner.l"
+#line 100 "scanner.l"
 {
-							//fprintf(logout,"Line No: %d Token COMMENT Lexeme %s found\n",line,yytext);
-                         //fprintf(yyout,"Line Number: %d\n",line);
 							char res[yyleng-1]={'\0'};
 							for(int i=0;i<yyleng;++i){
 								if(yytext[i]=='\n')line++;
@@ -1131,15 +931,15 @@ YY_RULE_SETUP
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 306 "scanner.l"
+#line 108 "scanner.l"
 {}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 308 "scanner.l"
+#line 110 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 1143 "lex.yy.c"
+#line 943 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2025,23 +1825,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 308 "scanner.l"
-
-
-
-// int main(){
-//     yyin=fopen("input.txt","r");
-//     yyout=fopen("log_error.txt","w");
-//     logout=fopen("log.txt","w");
-//     if(!logout)printf("Bye");
-//     yylex();
-//     table->Print(logout);
-//     printf("done");
-//     fclose(yyin);
-//     fclose(yyout);
-//     fclose(logout);
-//     return 0;
-// }
+#line 110 "scanner.l"
 
 
 
@@ -2055,30 +1839,3 @@ int main()
 
 
 
-
-
-// ''									{
-// 										//fprintf(logout,"Error at Line No: %d Empty character constant %s\n",line,yytext);
-//                                      //fprintf(yyout,"Line Number: %d\n",line);
-// 										error++;
-// 									}
-// [0-9]+[a-zA-Z0-9_]+					{
-// 										//fprintf(logout,"Error at line No: %d Invalid prefix on ID or invalid suffix on Number %s\n",line,yytext);
-//                                      //fprintf(yyout,"Line Number: %d\n",line);
-// 										error++;
-// 									}
-// [0-9]*(\.[0-9]*)?E[0-9]*\.[0-9]*	{
-// 										//fprintf(logout,"Error at line No: %d Ill formed number %s\n",line,yytext);
-//                                      //fprintf(yyout,"Line Number: %d\n",line);
-// 										error++;
-// 									}
-// ([0-9]*\.[0-9]*)+					{
-// 										//fprintf(logout,"Error at line No: %d Ill formed number %s\n",line,yytext);
-//                                      //fprintf(yyout,"Line Number: %d\n",line);
-// 										error++;
-// 									}
-// .									{
-// 										//fprintf(logout,"Error at Line No: %d Unrecognized character %s\n",line,yytext);
-//                                      //fprintf(yyout,"Line Number: %d\n",line);
-// 										error++;
-// 									}
