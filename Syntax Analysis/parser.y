@@ -46,14 +46,44 @@ mul_stmt: mul_stmt func_decl                                {
                                                                 //fprintf(yyout,"Line Number: %d\n",line);
                                                                 //fprintf(yyout,"mul_stmt: func_decl\n");
                                                             }
-|error                                                     {yyerrok;yyclearin;}                                                                                                                                                           
+|error                                                      {yyerrok;yyclearin;}                                                                                                                                                           
 ;
 
 func_decl: type_spec term LPAREN RPAREN LCURL stmt RCURL            {   
                                                                         fprintf(yyout,"Line Number: %d\n",line);
                                                                         fprintf(yyout,"func_decl: type_spec term LPAREN RPAREN LCURL stmt RCURL\n");
-                                                                    }                                                                                                                                                                                          
-;                                                           
+                                                                    }
+|type_spec term LPAREN arg_list RPAREN LCURL stmt RCURL  {   
+                                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                                        fprintf(yyout,"func_decl: type_spec term LPAREN arg_list RPAREN LCURL stmt RCURL\n");
+                                                                    }                                                                                                                                                                                                                                                                                                                               
+;                                  
+
+arg_list: INT ID COMMA arg_list                                     {   
+                                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                                        fprintf(yyout,"arg_list: INT ID COMMA arg_list\n");
+                                                                    }     
+|FLOAT ID COMMA arg_list                                            {   
+                                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                                        fprintf(yyout,"arg_list: FLOAT ID COMMA arg_list\n");
+                                                                    }     
+|CHAR ID COMMA arg_list                                             {   
+                                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                                        fprintf(yyout,"arg_list: CHAR ID COMMA arg_list\n");
+                                                                    }     
+|INT ID                                                             {   
+                                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                                        fprintf(yyout,"arg_list: INT ID\n");
+                                                                    }     
+|FLOAT ID                                                           {   
+                                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                                        fprintf(yyout,"arg_list: FLOAT ID\n");
+                                                                    }     
+|CHAR ID                                                            {   
+                                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                                        fprintf(yyout,"arg_list: CHAR ID\n");
+                                                                    }     
+;        
 
 stmt: stmt unit                                             {
                                                                 fprintf(yyout,"Line Number: %d\n",line);
@@ -159,31 +189,7 @@ expr: CONST_INT                                 {
 |LPAREN expr RPAREN                             {   
                                                     fprintf(yyout,"Line Number: %d\n",line);
                                                     fprintf(yyout,"expr: LPAREN expr RPAREN\n");
-                                                }
-// |LPAREN expr ADDOP expr RPAREN                                {
-//                                                     fprintf(yyout,"Line Number: %d\n",line);
-//                                                     fprintf(yyout,"expr: LPAREN expr ADDOP expr RPAREN\n");
-//                                                 }
-// |LPAREN expr MULOP expr RPAREN                                {
-//                                                     fprintf(yyout,"Line Number: %d\n",line);
-//                                                     fprintf(yyout,"expr: LPAREN expr MULOP expr RPAREN\n");
-//                                                 }
-// |LPAREN expr INCOP RPAREN                                     {   
-//                                                     fprintf(yyout,"Line Number: %d\n",line);
-//                                                     fprintf(yyout,"expr: LPAREN expr INCOP RPAREN\n");
-//                                                 }
-// |LPAREN expr RELOP expr RPAREN                                {   
-//                                                     fprintf(yyout,"Line Number: %d\n",line);
-//                                                     fprintf(yyout,"expr: LPAREN expr RELOP expr RPAREN\n");
-//                                                 }
-// |LPAREN expr LOGICOP expr RPAREN                              {   
-//                                                     fprintf(yyout,"Line Number: %d\n",line);
-//                                                     fprintf(yyout,"expr: LPAREN expr LOGICOP expr RPAREN\n");
-//                                                 }
-// |LPAREN NOT expr RPAREN                                       {   
-//                                                     fprintf(yyout,"Line Number: %d\n",line);
-//                                                     fprintf(yyout,"expr: LPAREN NOT expr RPAREN\n");
-//                                                 }                                                                                               
+                                                }                                                                                           
 |term                                           {
                                                     fprintf(yyout,"Line Number: %d\n",line);
                                                     fprintf(yyout,"expr: term\n");
