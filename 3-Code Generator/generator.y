@@ -41,21 +41,21 @@ char* newTemp(){
 %%
 
 prog: MAIN LPAREN RPAREN LCURL stmt RCURL   {printf("prog: MAIN LPAREN RPAREN LCURL stmt RCURL\n");}
-
+;
 stmt: stmt unit                             {printf("stmt: stmt unit\n");}
 | unit                                      {printf("stmt: unit\n");}
-
+;
 unit: var_decl                              {printf("unit: var_decl\n");}
 | expr_decl                                 {printf("unit: expr_decl\n");}
-
+;
 var_decl: type_spec decl_list SEMICOLON     {printf("var_decl: type_spec decl_list SEMICOLON\n");}
-
+;
 type_spec: INT                              {printf("type_spec: INT\n");}
 |CHAR                                       {printf("type_spec: CHAR\n");}
 |FLOAT                                      {printf("type_spec: FLOAT\n");}
-
+;
 decl_list: term                             {printf("decl_list: term\n");}
-
+;
 expr: NUM                   {printf("expr: NUM\n");}
 | expr ADDOP expr           {
     char *str = newTemp();
@@ -123,9 +123,9 @@ expr: NUM                   {printf("expr: NUM\n");}
     fprintf(yyout,"MOV ax, %s\n",$2.getSymbol().c_str());
 }
 |term                       {printf("expr: term\n");}
-
+;
 term: ID                    {printf("term: ID\n");}
-
+;
 expr_decl: term ASSIGNOP expr SEMICOLON     {
     fprintf(codeout,"%s = %s\n\n", $1.getSymbol().c_str(), $3.getSymbol().c_str());
     //ASM
@@ -137,6 +137,7 @@ expr_decl: term ASSIGNOP expr SEMICOLON     {
     //ASM
     tempCounter=1;
 }
+;
 
 %%
 

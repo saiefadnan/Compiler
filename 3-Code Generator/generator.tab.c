@@ -469,8 +469,8 @@ static const yytype_int8 yyrhs[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    43,    43,    45,    46,    48,    49,    51,    53,    54,
-      55,    57,    59,    60,    78,    93,   100,   106,   112,   120,
-     128,   130,   132,   138
+      55,    57,    59,    60,    75,    90,    97,   103,   109,   117,
+     125,   127,   129,   135
 };
 #endif
 
@@ -1481,9 +1481,6 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 60 "generator.y"
     {
-    if(tempCounter>1){
-        //fprintf(yyout,"MOV ax, t%d\n", tempCounter);
-    }
     char *str = newTemp();
     SymbolInfo sym(str,"tempID");
     (yyval)=sym;
@@ -1503,7 +1500,7 @@ yyreduce:
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 78 "generator.y"
+#line 75 "generator.y"
     {
     char *str = newTemp();
     SymbolInfo sym(str,"tempID");
@@ -1524,7 +1521,7 @@ yyreduce:
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 93 "generator.y"
+#line 90 "generator.y"
     {
     char *str = newTemp();
     SymbolInfo sym(str,"tempID");
@@ -1537,7 +1534,7 @@ yyreduce:
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 100 "generator.y"
+#line 97 "generator.y"
     {
     char *str = newTemp();
     SymbolInfo sym(str,"tempID");
@@ -1549,7 +1546,7 @@ yyreduce:
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 106 "generator.y"
+#line 103 "generator.y"
     {
     char *str = newTemp();
     SymbolInfo sym(str,"tempID");
@@ -1561,7 +1558,7 @@ yyreduce:
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 112 "generator.y"
+#line 109 "generator.y"
     {
     char *str = newTemp();
     SymbolInfo sym(str,"tempID");
@@ -1573,7 +1570,7 @@ yyreduce:
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 120 "generator.y"
+#line 117 "generator.y"
     {
     char *str = newTemp();
     SymbolInfo sym(str,"tempID");
@@ -1587,21 +1584,21 @@ yyreduce:
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 128 "generator.y"
+#line 125 "generator.y"
     {printf("expr: term\n");;}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 130 "generator.y"
+#line 127 "generator.y"
     {printf("term: ID\n");;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 132 "generator.y"
+#line 129 "generator.y"
     {
     fprintf(codeout,"%s = %s\n\n", (yyvsp[(1) - (4)]).getSymbol().c_str(), (yyvsp[(3) - (4)]).getSymbol().c_str());
     //ASM
@@ -1613,7 +1610,7 @@ yyreduce:
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 138 "generator.y"
+#line 135 "generator.y"
     {
     fprintf(codeout,"\n");
     //ASM
@@ -1624,7 +1621,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1628 "generator.tab.c"
+#line 1625 "generator.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1836,7 +1833,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 144 "generator.y"
+#line 142 "generator.y"
 
 
 int main(){
