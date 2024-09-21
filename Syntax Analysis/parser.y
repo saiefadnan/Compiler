@@ -196,7 +196,7 @@ expr: CONST_INT                                 {
                                                 }                                                                                 
 ;                           
 
-term: ID                                        {}                                                          
+term: ID                                        {}                                                       
 ;
 
 expr_decl: term ASSIGNOP expr SEMICOLON         {

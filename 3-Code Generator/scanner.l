@@ -50,14 +50,24 @@ int line=1;
 ","								{ SymbolInfo sym(yytext,"COMMA");yylval= sym;return COMMA;			}
 ";"								{ SymbolInfo sym(yytext,"SEMICOLON");yylval= sym;return SEMICOLON;	}
 
-[0-9]+
-| [0-9]*\.[0-9]+(E[+-]?[0-9]+)?
-| [0-9]+E[+-]?[0-9]+			{
+[0-9]+							{
 									SymbolInfo sym(yytext,"NUM");
                                     table->Insert(&sym);
 									yylval = sym;
                                     return NUM;
 								}
+[0-9]*\.[0-9]+(E[+-]?[0-9]+)?	{
+									SymbolInfo sym(yytext,"NUM");
+                                    table->Insert(&sym);
+									yylval = sym;
+                                    return NUM;
+								}		
+[0-9]+E[+-]?[0-9]+				{
+									SymbolInfo sym(yytext,"NUM");
+                                    table->Insert(&sym);
+									yylval = sym;
+                                    return NUM;
+								}		
 '[a-zA-Z]'						{			
 									SymbolInfo sym(yytext,"CONST_CHAR");
                                     table->Insert(&sym);
@@ -67,7 +77,6 @@ int line=1;
 [a-zA-Z_][a-zA-Z0-9_]*			{
 									SymbolInfo sym(yytext,"ID");
 									table->Insert(&sym);
-									printf("%s\n",yytext);
 									yylval = sym;
 									return ID;
 								}	

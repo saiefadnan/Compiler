@@ -141,22 +141,22 @@ char* newTemp(){
      DOUBLE = 275,
      NUM = 276,
      CONST_CHAR = 277,
-     ASSIGNOP = 278,
-     NEWLINE = 279,
-     LPAREN = 280,
-     RPAREN = 281,
-     LCURL = 282,
-     RCURL = 283,
-     LTHIRD = 284,
-     RTHIRD = 285,
-     COMMA = 286,
-     SEMICOLON = 287,
-     ADDOP = 288,
-     MULOP = 289,
-     LOGICOP = 290,
-     RELOP = 291,
-     INCOP = 292,
-     NOT = 293
+     NEWLINE = 278,
+     LPAREN = 279,
+     RPAREN = 280,
+     LCURL = 281,
+     RCURL = 282,
+     LTHIRD = 283,
+     RTHIRD = 284,
+     COMMA = 285,
+     SEMICOLON = 286,
+     ADDOP = 287,
+     MULOP = 288,
+     LOGICOP = 289,
+     RELOP = 290,
+     ASSIGNOP = 291,
+     NOT = 292,
+     INCOP = 293
    };
 #endif
 
@@ -389,7 +389,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  4
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   65
+#define YYLAST   67
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  39
@@ -455,22 +455,22 @@ static const yytype_uint8 yyprhs[] =
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      40,     0,    -1,     4,    25,    26,    27,    41,    28,    -1,
+      40,     0,    -1,     4,    24,    25,    26,    41,    27,    -1,
       41,    42,    -1,    42,    -1,    43,    -1,    48,    -1,    44,
-      45,    32,    -1,    17,    -1,    18,    -1,    19,    -1,    47,
-      -1,    21,    -1,    46,    33,    46,    -1,    46,    34,    46,
-      -1,    46,    37,    -1,    46,    36,    46,    -1,    46,    35,
-      46,    -1,    38,    46,    -1,    25,    46,    26,    -1,    47,
-      -1,     3,    -1,    47,    23,    46,    32,    -1,    46,    32,
+      45,    31,    -1,    17,    -1,    18,    -1,    19,    -1,    47,
+      -1,    21,    -1,    46,    32,    46,    -1,    46,    33,    46,
+      -1,    46,    38,    -1,    46,    35,    46,    -1,    46,    34,
+      46,    -1,    37,    46,    -1,    24,    46,    25,    -1,    47,
+      -1,     3,    -1,    47,    36,    46,    31,    -1,    46,    31,
       -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    43,    43,    45,    46,    48,    49,    51,    53,    54,
-      55,    57,    59,    60,    75,    90,    97,   103,   109,   117,
-     125,   127,   129,   135
+       0,    42,    42,    44,    45,    47,    48,    50,    52,    53,
+      54,    56,    58,    59,    74,    89,    95,   101,   107,   115,
+     123,   125,   127,   133
 };
 #endif
 
@@ -482,9 +482,9 @@ static const char *const yytname[] =
   "$end", "error", "$undefined", "ID", "MAIN", "IF", "ELSE", "FOR",
   "WHILE", "DO", "BREAK", "VOID", "RETURN", "SWITCH", "DEFAULT", "CASE",
   "CONTINUE", "INT", "CHAR", "FLOAT", "DOUBLE", "NUM", "CONST_CHAR",
-  "ASSIGNOP", "NEWLINE", "LPAREN", "RPAREN", "LCURL", "RCURL", "LTHIRD",
-  "RTHIRD", "COMMA", "SEMICOLON", "ADDOP", "MULOP", "LOGICOP", "RELOP",
-  "INCOP", "NOT", "$accept", "prog", "stmt", "unit", "var_decl",
+  "NEWLINE", "LPAREN", "RPAREN", "LCURL", "RCURL", "LTHIRD", "RTHIRD",
+  "COMMA", "SEMICOLON", "ADDOP", "MULOP", "LOGICOP", "RELOP", "ASSIGNOP",
+  "NOT", "INCOP", "$accept", "prog", "stmt", "unit", "var_decl",
   "type_spec", "decl_list", "expr", "term", "expr_decl", 0
 };
 #endif
@@ -537,20 +537,20 @@ static const yytype_int8 yydefgoto[] =
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -34
+#define YYPACT_NINF -27
 static const yytype_int8 yypact[] =
 {
-      13,     1,    33,    11,   -34,    12,     2,   -34,   -34,   -34,
-     -34,   -34,     3,     3,    -3,   -34,   -34,    35,    22,    25,
-     -34,    10,   -34,   -34,   -34,   -34,    17,   -34,   -34,     3,
-       3,     3,     3,   -34,     3,   -34,   -34,   -33,   -28,   -26,
-      14,    28,   -34
+      -1,   -20,    23,     3,   -27,     7,     8,   -27,   -27,   -27,
+     -27,   -27,    -2,    -2,    -3,   -27,   -27,    38,   -26,     6,
+     -27,    21,   -27,    13,   -27,   -27,    26,   -27,   -27,    -2,
+      -2,    -2,    -2,   -27,    -2,   -27,   -27,    27,    29,   -18,
+      13,     5,   -27
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -34,   -34,   -34,    38,   -34,   -34,   -34,     0,    36,   -34
+     -27,   -27,   -27,    30,   -27,   -27,   -27,    18,    -4,   -27
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -560,35 +560,35 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       7,    30,    31,    32,    33,     7,     7,    31,    32,    33,
-      32,    33,    21,    23,     8,     9,    10,     1,    11,     8,
-       9,    10,    12,    11,    11,    24,     3,    12,    12,    37,
-      38,    39,    40,     4,    41,    13,    35,     5,     7,     6,
-      13,    13,    19,    29,    30,    31,    32,    33,    34,    36,
-      19,    33,    25,    27,    28,    29,    30,    31,    32,    33,
-      42,    29,    30,    31,    32,    33
+       7,     7,    19,     1,     3,    28,    29,    30,    31,    32,
+      19,     7,    33,    27,     8,     9,    10,    32,    11,    11,
+      33,    12,    12,     4,    24,     8,     9,    10,     5,    11,
+      21,    23,    12,     6,    13,    13,    42,    29,    30,    31,
+      32,     7,    34,    33,    25,    13,    35,    37,    38,    39,
+      40,    33,    41,    29,    30,    31,    32,    36,     0,    33,
+      30,    31,    32,    31,    32,    33,     0,    33
 };
 
-static const yytype_uint8 yycheck[] =
+static const yytype_int8 yycheck[] =
 {
-       3,    34,    35,    36,    37,     3,     3,    35,    36,    37,
-      36,    37,    12,    13,    17,    18,    19,     4,    21,    17,
-      18,    19,    25,    21,    21,    28,    25,    25,    25,    29,
-      30,    31,    32,     0,    34,    38,    26,    26,     3,    27,
-      38,    38,     6,    33,    34,    35,    36,    37,    23,    32,
-      14,    37,    14,    17,    32,    33,    34,    35,    36,    37,
-      32,    33,    34,    35,    36,    37
+       3,     3,     6,     4,    24,    31,    32,    33,    34,    35,
+      14,     3,    38,    17,    17,    18,    19,    35,    21,    21,
+      38,    24,    24,     0,    27,    17,    18,    19,    25,    21,
+      12,    13,    24,    26,    37,    37,    31,    32,    33,    34,
+      35,     3,    36,    38,    14,    37,    25,    29,    30,    31,
+      32,    38,    34,    32,    33,    34,    35,    31,    -1,    38,
+      33,    34,    35,    34,    35,    38,    -1,    38
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     4,    40,    25,     0,    26,    27,     3,    17,    18,
-      19,    21,    25,    38,    41,    42,    43,    44,    46,    47,
-      48,    46,    47,    46,    28,    42,    45,    47,    32,    33,
-      34,    35,    36,    37,    23,    26,    32,    46,    46,    46,
-      46,    46,    32
+       0,     4,    40,    24,     0,    25,    26,     3,    17,    18,
+      19,    21,    24,    37,    41,    42,    43,    44,    46,    47,
+      48,    46,    47,    46,    27,    42,    45,    47,    31,    32,
+      33,    34,    35,    38,    36,    25,    31,    46,    46,    46,
+      46,    46,    31
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1402,226 +1402,225 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 43 "generator.y"
-    {printf("prog: MAIN LPAREN RPAREN LCURL stmt RCURL\n");;}
+#line 42 "generator.y"
+    {/*printf("prog: MAIN LPAREN RPAREN LCURL stmt RCURL\n");*/;}
     break;
 
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 45 "generator.y"
-    {printf("stmt: stmt unit\n");;}
+#line 44 "generator.y"
+    {/* printf("stmt: stmt unit\n"); */;}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 46 "generator.y"
-    {printf("stmt: unit\n");;}
+#line 45 "generator.y"
+    {/* printf("stmt: unit\n"); */;}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 48 "generator.y"
-    {printf("unit: var_decl\n");;}
+#line 47 "generator.y"
+    {/* printf("unit: var_decl\n"); */;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 49 "generator.y"
-    {printf("unit: expr_decl\n");;}
+#line 48 "generator.y"
+    {/* printf("unit: expr_decl\n"); */;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 51 "generator.y"
-    {printf("var_decl: type_spec decl_list SEMICOLON\n");;}
+#line 50 "generator.y"
+    {/* printf("var_decl: type_spec decl_list SEMICOLON\n"); */;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 53 "generator.y"
-    {printf("type_spec: INT\n");;}
+#line 52 "generator.y"
+    {/* printf("type_spec: INT\n"); */;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 54 "generator.y"
-    {printf("type_spec: CHAR\n");;}
+#line 53 "generator.y"
+    {/* printf("type_spec: CHAR\n"); */;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 55 "generator.y"
-    {printf("type_spec: FLOAT\n");;}
+#line 54 "generator.y"
+    {/* printf("type_spec: FLOAT\n"); */;}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 57 "generator.y"
-    {printf("decl_list: term\n");;}
+#line 56 "generator.y"
+    {/* printf("decl_list: term\n"); */;}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 59 "generator.y"
-    {printf("expr: NUM\n");;}
+#line 58 "generator.y"
+    {/* printf("expr: NUM\n"); */;}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 60 "generator.y"
+#line 59 "generator.y"
     {
-    char *str = newTemp();
-    SymbolInfo sym(str,"tempID");
-    (yyval)=sym;
-    fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
-    //ASM
-    fprintf(yyout,"MOV ax, %s\n",(yyvsp[(1) - (3)]).getSymbol().c_str());
-    fprintf(yyout,"MOV bx, %s\n",(yyvsp[(3) - (3)]).getSymbol().c_str());
-    if((yyvsp[(2) - (3)]).getSymbol()=="+"){
-        fprintf(yyout,"ADD ax, bx\n");
-    }else{
-        fprintf(yyout,"SUB ax, bx\n");
-    }
-    fprintf(yyout,"MOV %s, ax\n\n",(yyval).getSymbol().c_str());
-;}
+                                char *str = newTemp();
+                                SymbolInfo sym(str,"tempID");
+                                (yyval)=sym;
+                                fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
+                                //ASM
+                                fprintf(yyout,"MOV ax, %s\n",(yyvsp[(1) - (3)]).getSymbol().c_str());
+                                fprintf(yyout,"MOV bx, %s\n",(yyvsp[(3) - (3)]).getSymbol().c_str());
+                                if((yyvsp[(2) - (3)]).getSymbol()=="+"){
+                                    fprintf(yyout,"ADD ax, bx\n");
+                                }else{
+                                    fprintf(yyout,"SUB ax, bx\n");
+                                }
+                                fprintf(yyout,"MOV %s, ax\n\n",(yyval).getSymbol().c_str());
+                            ;}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 75 "generator.y"
+#line 74 "generator.y"
     {
-    char *str = newTemp();
-    SymbolInfo sym(str,"tempID");
-    (yyval)=sym;
-    fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
-    //ASM
-    fprintf(yyout,"MOV ax, %s\n",(yyvsp[(1) - (3)]).getSymbol().c_str());
-    fprintf(yyout,"MOV bx, %s\n",(yyvsp[(3) - (3)]).getSymbol().c_str());
-    if((yyvsp[(2) - (3)]).getSymbol()=="*"){
-        fprintf(yyout,"MUL bx\n");
-    }else{
-        fprintf(yyout,"DIV bx\n");
-    }
-    fprintf(yyout,"MOV %s, ax\n\n",(yyval).getSymbol().c_str());
-;}
+                                char *str = newTemp();
+                                SymbolInfo sym(str,"tempID");
+                                (yyval)=sym;
+                                fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
+                                //ASM
+                                fprintf(yyout,"MOV ax, %s\n",(yyvsp[(1) - (3)]).getSymbol().c_str());
+                                fprintf(yyout,"MOV bx, %s\n",(yyvsp[(3) - (3)]).getSymbol().c_str());
+                                if((yyvsp[(2) - (3)]).getSymbol()=="*"){
+                                    fprintf(yyout,"MUL bx\n");
+                                }else{
+                                    fprintf(yyout,"DIV bx\n");
+                                }
+                                fprintf(yyout,"MOV %s, ax\n\n",(yyval).getSymbol().c_str());
+                            ;}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 90 "generator.y"
+#line 89 "generator.y"
     {
-    char *str = newTemp();
-    SymbolInfo sym(str,"tempID");
-    (yyval)=sym;
-    printf("INCOP");
-    fprintf(codeout,"%s = %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (2)]).getSymbol().c_str(), (yyvsp[(2) - (2)]).getSymbol().c_str());
-;}
+                                char *str = newTemp();
+                                SymbolInfo sym(str,"tempID");
+                                (yyval)=sym;
+                                fprintf(codeout,"%s = %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (2)]).getSymbol().c_str(), (yyvsp[(2) - (2)]).getSymbol().c_str());
+                            ;}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 97 "generator.y"
+#line 95 "generator.y"
     {
-    char *str = newTemp();
-    SymbolInfo sym(str,"tempID");
-    (yyval)=sym;
-    fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
-;}
+                                char *str = newTemp();
+                                SymbolInfo sym(str,"tempID");
+                                (yyval)=sym;
+                                fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
+                            ;}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 103 "generator.y"
+#line 101 "generator.y"
     {
-    char *str = newTemp();
-    SymbolInfo sym(str,"tempID");
-    (yyval)=sym;
-    fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
-;}
+                                char *str = newTemp();
+                                SymbolInfo sym(str,"tempID");
+                                (yyval)=sym;
+                                fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
+                            ;}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 109 "generator.y"
+#line 107 "generator.y"
     {
-    char *str = newTemp();
-    SymbolInfo sym(str,"tempID");
-    (yyval)=sym;
-    fprintf(codeout,"%s = %s %s \n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (2)]).getSymbol().c_str(), (yyvsp[(2) - (2)]).getSymbol().c_str());
-;}
+                                char *str = newTemp();
+                                SymbolInfo sym(str,"tempID");
+                                (yyval)=sym;
+                                fprintf(codeout,"%s = %s %s \n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (2)]).getSymbol().c_str(), (yyvsp[(2) - (2)]).getSymbol().c_str());
+                            ;}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 117 "generator.y"
+#line 115 "generator.y"
     {
-    char *str = newTemp();
-    SymbolInfo sym(str,"tempID");
-    (yyval)=sym;
-    fprintf(codeout,"%s = %s \n", (yyval).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str());
-     //ASM
-    fprintf(yyout,"MOV ax, %s\n",(yyvsp[(2) - (3)]).getSymbol().c_str());
-;}
+                                char *str = newTemp();
+                                SymbolInfo sym(str,"tempID");
+                                (yyval)=sym;
+                                fprintf(codeout,"%s = %s \n", (yyval).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str());
+                                //ASM
+                                fprintf(yyout,"MOV ax, %s\n",(yyvsp[(2) - (3)]).getSymbol().c_str());
+                            ;}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 125 "generator.y"
-    {printf("expr: term\n");;}
+#line 123 "generator.y"
+    {;}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 127 "generator.y"
-    {printf("term: ID\n");;}
+#line 125 "generator.y"
+    {;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 129 "generator.y"
+#line 127 "generator.y"
     {
-    fprintf(codeout,"%s = %s\n\n", (yyvsp[(1) - (4)]).getSymbol().c_str(), (yyvsp[(3) - (4)]).getSymbol().c_str());
-    //ASM
-    fprintf(yyout,"MOV %s, %s\n\n",(yyvsp[(1) - (4)]).getSymbol().c_str(), (yyvsp[(3) - (4)]).getSymbol().c_str());
-    tempCounter=1;
-;}
+                                                fprintf(codeout,"%s = %s\n\n", (yyvsp[(1) - (4)]).getSymbol().c_str(), (yyvsp[(3) - (4)]).getSymbol().c_str());
+                                                //ASM
+                                                fprintf(yyout,"MOV %s, %s\n\n",(yyvsp[(1) - (4)]).getSymbol().c_str(), (yyvsp[(3) - (4)]).getSymbol().c_str());
+                                                tempCounter=1;
+                                            ;}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 135 "generator.y"
+#line 133 "generator.y"
     {
-    fprintf(codeout,"\n");
-    //ASM
-    tempCounter=1;
-;}
+                                                fprintf(codeout,"\n");
+                                                //ASM
+                                                tempCounter=1;
+                                            ;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1625 "generator.tab.c"
+#line 1624 "generator.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1833,7 +1832,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 142 "generator.y"
+#line 140 "generator.y"
 
 
 int main(){

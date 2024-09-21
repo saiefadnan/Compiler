@@ -14,7 +14,7 @@ class SymbolInfo{
 
     string getType(){return type;}
 
-    string setVal(SymbolInfo* sym){
+    void setVal(SymbolInfo* sym){
         this->symbol=sym->symbol;
         this->type=sym->type;
     }
