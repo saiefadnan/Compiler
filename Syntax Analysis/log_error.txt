@@ -188,13 +188,15 @@ Line Number: 16
 expr: expr MULOP expr
 Line Number: 16
 expr: LPAREN expr RPAREN
-c is already declared.
 Line Number: 17
 expr: expr ADDOP expr
 syntax error 
 Line Number: 17 
 Line Number: 17
+unit: expr_decl 
+Line Number: 17
 stmt: stmt unit
+c is already declared.
 a is already declared.
 Line Number: 17
 expr: term
@@ -266,6 +268,8 @@ Line Number: 22
 decl_list: decl_list COMMA term
 syntax error 
 Line Number: 22 
+Line Number: 22
+unit: expr_decl 
 Line Number: 22
 stmt: stmt unit
 Line Number: 22

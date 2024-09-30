@@ -70,6 +70,7 @@
 /* Line 189 of yacc.c  */
 #line 1 "generator.y"
 
+#include<bits/stdc++.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include "SymbolTable.h"
@@ -79,6 +80,10 @@ extern FILE *yyout, *logout, *codeout, *yyin;
 extern SymbolTable *table;
 extern int line;
 int tempCounter = 1;
+SymbolInfo a1;
+
+set<string>vars;
+
 int yylex();
 void yyerror(const char* s){
     fprintf(yyout,"%s \nLine Number: %d \n",s,line);
@@ -87,6 +92,8 @@ void yyerror(const char* s){
 char* newTemp(){
     char* temp = (char*)(malloc(15*sizeof(char)));
     sprintf(temp,"t%d",tempCounter);
+    vars.insert("t"+to_string(tempCounter));
+    cout<<vars.size();;
     tempCounter++;
     return temp;
 }
@@ -94,7 +101,7 @@ char* newTemp(){
 
 
 /* Line 189 of yacc.c  */
-#line 98 "generator.tab.c"
+#line 105 "generator.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -174,7 +181,7 @@ typedef int YYSTYPE;
 
 
 /* Line 264 of yacc.c  */
-#line 178 "generator.tab.c"
+#line 185 "generator.tab.c"
 
 #ifdef short
 # undef short
@@ -468,9 +475,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    42,    42,    44,    45,    47,    48,    50,    52,    53,
-      54,    56,    58,    59,    74,    89,    95,   101,   107,   115,
-     123,   125,   127,   133
+       0,    49,    49,    51,    52,    54,    55,    57,    59,    60,
+      61,    63,    65,    66,    83,    98,   104,   110,   116,   124,
+     132,   134,   136,   144
 };
 #endif
 
@@ -1402,126 +1409,128 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 42 "generator.y"
+#line 49 "generator.y"
     {/*printf("prog: MAIN LPAREN RPAREN LCURL stmt RCURL\n");*/;}
     break;
 
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 44 "generator.y"
+#line 51 "generator.y"
     {/* printf("stmt: stmt unit\n"); */;}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 45 "generator.y"
+#line 52 "generator.y"
     {/* printf("stmt: unit\n"); */;}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 47 "generator.y"
+#line 54 "generator.y"
     {/* printf("unit: var_decl\n"); */;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 48 "generator.y"
+#line 55 "generator.y"
     {/* printf("unit: expr_decl\n"); */;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 50 "generator.y"
+#line 57 "generator.y"
     {/* printf("var_decl: type_spec decl_list SEMICOLON\n"); */;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 52 "generator.y"
+#line 59 "generator.y"
     {/* printf("type_spec: INT\n"); */;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 53 "generator.y"
+#line 60 "generator.y"
     {/* printf("type_spec: CHAR\n"); */;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 54 "generator.y"
+#line 61 "generator.y"
     {/* printf("type_spec: FLOAT\n"); */;}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 56 "generator.y"
+#line 63 "generator.y"
     {/* printf("decl_list: term\n"); */;}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 58 "generator.y"
+#line 65 "generator.y"
     {/* printf("expr: NUM\n"); */;}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 59 "generator.y"
+#line 66 "generator.y"
     {
                                 char *str = newTemp();
                                 SymbolInfo sym(str,"tempID");
                                 (yyval)=sym;
                                 fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
                                 //ASM
-                                fprintf(yyout,"MOV ax, %s\n",(yyvsp[(1) - (3)]).getSymbol().c_str());
-                                fprintf(yyout,"MOV bx, %s\n",(yyvsp[(3) - (3)]).getSymbol().c_str());
+                                // fprintf(yyout,"MOV ax, %s\n",$1.getSymbol().c_str());
+                                // fprintf(yyout,"MOV bx, %s\n",$3.getSymbol().c_str());
+                                a1.storeASM("MOV ax, "+(yyvsp[(1) - (3)]).getSymbol());
+                                a1.storeASM("MOV bx, "+(yyvsp[(3) - (3)]).getSymbol());
                                 if((yyvsp[(2) - (3)]).getSymbol()=="+"){
-                                    fprintf(yyout,"ADD ax, bx\n");
+                                    a1.storeASM("ADD ax, bx");
                                 }else{
-                                    fprintf(yyout,"SUB ax, bx\n");
+                                    a1.storeASM("SUB ax, bx");
                                 }
-                                fprintf(yyout,"MOV %s, ax\n\n",(yyval).getSymbol().c_str());
+                                a1.storeASM("MOV "+ (yyval).getSymbol() +", ax\n");
                             ;}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 74 "generator.y"
+#line 83 "generator.y"
     {
                                 char *str = newTemp();
                                 SymbolInfo sym(str,"tempID");
                                 (yyval)=sym;
                                 fprintf(codeout,"%s = %s %s %s\n", (yyval).getSymbol().c_str(), (yyvsp[(1) - (3)]).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str(),(yyvsp[(3) - (3)]).getSymbol().c_str());
                                 //ASM
-                                fprintf(yyout,"MOV ax, %s\n",(yyvsp[(1) - (3)]).getSymbol().c_str());
-                                fprintf(yyout,"MOV bx, %s\n",(yyvsp[(3) - (3)]).getSymbol().c_str());
+                                a1.storeASM("MOV ax, "+(yyvsp[(1) - (3)]).getSymbol());
+                                a1.storeASM("MOV bx, "+(yyvsp[(3) - (3)]).getSymbol());
                                 if((yyvsp[(2) - (3)]).getSymbol()=="*"){
-                                    fprintf(yyout,"MUL bx\n");
+                                    a1.storeASM("MUL bx");
                                 }else{
-                                    fprintf(yyout,"DIV bx\n");
+                                    a1.storeASM("DIV bx");
                                 }
-                                fprintf(yyout,"MOV %s, ax\n\n",(yyval).getSymbol().c_str());
+                                a1.storeASM("MOV "+ (yyval).getSymbol() +", ax\n");
                             ;}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 89 "generator.y"
+#line 98 "generator.y"
     {
                                 char *str = newTemp();
                                 SymbolInfo sym(str,"tempID");
@@ -1533,7 +1542,7 @@ yyreduce:
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 95 "generator.y"
+#line 104 "generator.y"
     {
                                 char *str = newTemp();
                                 SymbolInfo sym(str,"tempID");
@@ -1545,7 +1554,7 @@ yyreduce:
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 101 "generator.y"
+#line 110 "generator.y"
     {
                                 char *str = newTemp();
                                 SymbolInfo sym(str,"tempID");
@@ -1557,7 +1566,7 @@ yyreduce:
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 107 "generator.y"
+#line 116 "generator.y"
     {
                                 char *str = newTemp();
                                 SymbolInfo sym(str,"tempID");
@@ -1569,39 +1578,41 @@ yyreduce:
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 115 "generator.y"
+#line 124 "generator.y"
     {
                                 char *str = newTemp();
                                 SymbolInfo sym(str,"tempID");
                                 (yyval)=sym;
                                 fprintf(codeout,"%s = %s \n", (yyval).getSymbol().c_str(), (yyvsp[(2) - (3)]).getSymbol().c_str());
                                 //ASM
-                                fprintf(yyout,"MOV ax, %s\n",(yyvsp[(2) - (3)]).getSymbol().c_str());
+                                a1.storeASM("MOV ax, " + (yyvsp[(2) - (3)]).getSymbol());
                             ;}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 123 "generator.y"
+#line 132 "generator.y"
     {;}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 125 "generator.y"
+#line 134 "generator.y"
     {;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 127 "generator.y"
+#line 136 "generator.y"
     {
                                                 fprintf(codeout,"%s = %s\n\n", (yyvsp[(1) - (4)]).getSymbol().c_str(), (yyvsp[(3) - (4)]).getSymbol().c_str());
-                                                //ASM
-                                                fprintf(yyout,"MOV %s, %s\n\n",(yyvsp[(1) - (4)]).getSymbol().c_str(), (yyvsp[(3) - (4)]).getSymbol().c_str());
+                                                //ASM                            
+                                                a1.storeASM("MOV ax, " + (yyvsp[(3) - (4)]).getSymbol());
+                                                a1.storeASM("MOV " + (yyvsp[(1) - (4)]).getSymbol() + ", ax\n");
+                                                vars.insert((yyvsp[(1) - (4)]).getSymbol());
                                                 tempCounter=1;
                                             ;}
     break;
@@ -1609,7 +1620,7 @@ yyreduce:
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 133 "generator.y"
+#line 144 "generator.y"
     {
                                                 fprintf(codeout,"\n");
                                                 //ASM
@@ -1620,7 +1631,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1624 "generator.tab.c"
+#line 1635 "generator.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1832,7 +1843,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 140 "generator.y"
+#line 151 "generator.y"
 
 
 int main(){
@@ -1841,6 +1852,23 @@ int main(){
     yyout=fopen("code.asm","w");
     codeout=fopen("code.ir","w");
     yyparse();
+
+    fprintf(yyout,".model small\n");
+    fprintf(yyout,".stack 100h\n");
+    fprintf(yyout,".data\n");
+    for(auto i:vars){
+        fprintf(yyout,"%s dw ?\n",i.c_str());
+    }
+    fprintf(yyout,".code\n");
+    fprintf(yyout,"MAIN PROC\n");
+
+    fprintf(yyout, "    MOV ax, @data\n");
+    fprintf(yyout, "    MOV ds, ax\n\n");
+
+    fprintf(yyout,a1.getASM().c_str());
+
+    fprintf(yyout,"MAIN ENDP\n");
+    fprintf(yyout,"END MAIN\n");
     table->Print(logout);
     fclose(yyout);
     fclose(yyin);

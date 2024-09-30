@@ -13,10 +13,10 @@ int error=0;
 %%
 
 
-[ \t]+				    {}
+[ \t]+		{}
 
 
-[\n]					{ line++; }
+[\n]		{ line++;}
 
 "if" 		{ return IF;      }
 "else" 		{ return ELSE;    }
@@ -82,27 +82,9 @@ int error=0;
 
 [a-zA-Z_][a-zA-Z0-9_]*	{
 							SymbolInfo* sym=new SymbolInfo(yytext,"identifier");
-							if(!table->Insert(sym)){
-								fprintf(yyout,"%s is already declared.\n",yytext);
-								error++;
-                            }
-							else {
-								fprintf(yyout,"Line Number: %d\n",line);
-                                fprintf(yyout,"term: ID\n");
-								yylval.svar = yytext;
-							}
+							yylval.svar = yytext;
 							return ID;
 						}			
-
-
-"//"(.*)?				{}
-
-"/*"[^*/]*("*/")?		{
-							char res[yyleng-1]={'\0'};
-							for(int i=0;i<yyleng;++i){
-								if(yytext[i]=='\n')line++;
-							}
-						}
 
 
 .                       {}

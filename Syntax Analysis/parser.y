@@ -23,7 +23,7 @@ void yyerror(const char* s){
 %token <cvar> CONST_CHAR
 %token <svar> ID
 
-%token IF ELSE FOR WHILE DO BREAK VOID RETURN SWITCH DEFAULT CASE CONTINUE  
+%token IF ELSE FOR WHILE DO BREAK VOID RETURN SWITCH DEFAULT CASE CONTINUE
 %token CHAR INT FLOAT DOUBLE
 %token INCOP RELOP LOGICOP NOT ASSIGNOP ADDOP MULOP
 %token LPAREN RPAREN LCURL RCURL LTHIRD RTHIRD COMMA SEMICOLON
@@ -46,7 +46,7 @@ mul_stmt: mul_stmt func_decl                                {
                                                                 //fprintf(yyout,"Line Number: %d\n",line);
                                                                 //fprintf(yyout,"mul_stmt: func_decl\n");
                                                             }
-|error                                                      {yyerrok;yyclearin;}                                                                                                                                                           
+|error                                                      {yyerrok;yyclearin;}                                                                                                                                                             
 ;
 
 func_decl: type_spec term LPAREN RPAREN LCURL stmt RCURL            {   
@@ -102,8 +102,7 @@ unit: var_decl                                          {
 |expr_decl                                              {
                                                             fprintf(yyout,"Line Number: %d\n",line);
                                                             fprintf(yyout,"unit: expr_decl \n");
-                                                        }
-|error                                                  { yyerrok;}                                                                                                                                                                                                                              
+                                                        }                                                                                                                                                                                                                       
 ;
 
 var_decl: type_spec decl_list SEMICOLON                 {
@@ -196,13 +195,24 @@ expr: CONST_INT                                 {
                                                 }                                                                                 
 ;                           
 
-term: ID                                        {}                                                       
+term: ID                                        { 
+                                                    SymbolInfo* sym=new SymbolInfo($1,"identifier");
+                                                    if(!table->Insert(sym)){
+                                                        fprintf(yyout,"%s is already declared.\n",$1);
+                                                        error++;
+                                                    }
+							                        else{
+                                                        fprintf(yyout,"Line Number: %d\n",line);
+                                                        fprintf(yyout,"term: ID\n");
+                                                    }
+                                                }                                                       
 ;
 
 expr_decl: term ASSIGNOP expr SEMICOLON         {
                                                     fprintf(yyout,"Line Number: %d\n",line);
                                                     fprintf(yyout,"expr_decl: term ASSIGNOP expr SEMICOLON\n");
-                                                }                                                                                                           
+                                                }   
+|error                                          {yyerrok;}                                                                                                                                                     
 ;                        
 
 %%

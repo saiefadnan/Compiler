@@ -1,10 +1,10 @@
 float fun()
-{ 
-    a=b+c; 
+{
+a=b+c;
 }
 
 
-int main() { int a=100;
+int main(){ int a=100;
 float x,y;
 double d;
 int c[10];

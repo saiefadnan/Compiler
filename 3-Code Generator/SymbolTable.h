@@ -3,7 +3,7 @@ using namespace std;
 
 class SymbolInfo{
     private:
-    string symbol,type;
+    string symbol,type,code;
 
     public:
     SymbolInfo():symbol(""),type(""){}
@@ -17,6 +17,14 @@ class SymbolInfo{
     void setVal(SymbolInfo* sym){
         this->symbol=sym->symbol;
         this->type=sym->type;
+    }
+
+    void storeASM(string ins){
+        code = code + "    "+ ins + "\n";
+    }
+
+    string getASM(){
+        return this->code;
     }
 
     ~SymbolInfo(){}

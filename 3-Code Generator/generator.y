@@ -1,4 +1,5 @@
 %{
+#include<bits/stdc++.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include "SymbolTable.h"
@@ -8,6 +9,10 @@ extern FILE *yyout, *logout, *codeout, *yyin;
 extern SymbolTable *table;
 extern int line;
 int tempCounter = 1;
+SymbolInfo a1;
+
+set<string>vars;
+
 int yylex();
 void yyerror(const char* s){
     fprintf(yyout,"%s \nLine Number: %d \n",s,line);
@@ -16,6 +21,8 @@ void yyerror(const char* s){
 char* newTemp(){
     char* temp = (char*)(malloc(15*sizeof(char)));
     sprintf(temp,"t%d",tempCounter);
+    vars.insert("t"+to_string(tempCounter));
+    cout<<vars.size();;
     tempCounter++;
     return temp;
 }
@@ -62,14 +69,16 @@ expr: NUM                                   {/* printf("expr: NUM\n"); */}
                                 $$=sym;
                                 fprintf(codeout,"%s = %s %s %s\n", $$.getSymbol().c_str(), $1.getSymbol().c_str(), $2.getSymbol().c_str(),$3.getSymbol().c_str());
                                 //ASM
-                                fprintf(yyout,"MOV ax, %s\n",$1.getSymbol().c_str());
-                                fprintf(yyout,"MOV bx, %s\n",$3.getSymbol().c_str());
+                                // fprintf(yyout,"MOV ax, %s\n",$1.getSymbol().c_str());
+                                // fprintf(yyout,"MOV bx, %s\n",$3.getSymbol().c_str());
+                                a1.storeASM("MOV ax, "+$1.getSymbol());
+                                a1.storeASM("MOV bx, "+$3.getSymbol());
                                 if($2.getSymbol()=="+"){
-                                    fprintf(yyout,"ADD ax, bx\n");
+                                    a1.storeASM("ADD ax, bx");
                                 }else{
-                                    fprintf(yyout,"SUB ax, bx\n");
+                                    a1.storeASM("SUB ax, bx");
                                 }
-                                fprintf(yyout,"MOV %s, ax\n\n",$$.getSymbol().c_str());
+                                a1.storeASM("MOV "+ $$.getSymbol() +", ax\n");
                             }
 | expr MULOP expr           {
                                 char *str = newTemp();
@@ -77,14 +86,14 @@ expr: NUM                                   {/* printf("expr: NUM\n"); */}
                                 $$=sym;
                                 fprintf(codeout,"%s = %s %s %s\n", $$.getSymbol().c_str(), $1.getSymbol().c_str(), $2.getSymbol().c_str(),$3.getSymbol().c_str());
                                 //ASM
-                                fprintf(yyout,"MOV ax, %s\n",$1.getSymbol().c_str());
-                                fprintf(yyout,"MOV bx, %s\n",$3.getSymbol().c_str());
+                                a1.storeASM("MOV ax, "+$1.getSymbol());
+                                a1.storeASM("MOV bx, "+$3.getSymbol());
                                 if($2.getSymbol()=="*"){
-                                    fprintf(yyout,"MUL bx\n");
+                                    a1.storeASM("MUL bx");
                                 }else{
-                                    fprintf(yyout,"DIV bx\n");
+                                    a1.storeASM("DIV bx");
                                 }
-                                fprintf(yyout,"MOV %s, ax\n\n",$$.getSymbol().c_str());
+                                a1.storeASM("MOV "+ $$.getSymbol() +", ax\n");
                             }
 | expr INCOP                {
                                 char *str = newTemp();
@@ -118,7 +127,7 @@ expr: NUM                                   {/* printf("expr: NUM\n"); */}
                                 $$=sym;
                                 fprintf(codeout,"%s = %s \n", $$.getSymbol().c_str(), $2.getSymbol().c_str());
                                 //ASM
-                                fprintf(yyout,"MOV ax, %s\n",$2.getSymbol().c_str());
+                                a1.storeASM("MOV ax, " + $2.getSymbol());
                             }
 |term                       {}
 ;
@@ -126,8 +135,10 @@ term: ID                    {}
 ;
 expr_decl: term ASSIGNOP expr SEMICOLON     {
                                                 fprintf(codeout,"%s = %s\n\n", $1.getSymbol().c_str(), $3.getSymbol().c_str());
-                                                //ASM
-                                                fprintf(yyout,"MOV %s, %s\n\n",$1.getSymbol().c_str(), $3.getSymbol().c_str());
+                                                //ASM                            
+                                                a1.storeASM("MOV ax, " + $3.getSymbol());
+                                                a1.storeASM("MOV " + $1.getSymbol() + ", ax\n");
+                                                vars.insert($1.getSymbol());
                                                 tempCounter=1;
                                             }
 | expr SEMICOLON                            {
@@ -145,6 +156,23 @@ int main(){
     yyout=fopen("code.asm","w");
     codeout=fopen("code.ir","w");
     yyparse();
+
+    fprintf(yyout,".model small\n");
+    fprintf(yyout,".stack 100h\n");
+    fprintf(yyout,".data\n");
+    for(auto i:vars){
+        fprintf(yyout,"%s dw ?\n",i.c_str());
+    }
+    fprintf(yyout,".code\n");
+    fprintf(yyout,"MAIN PROC\n");
+
+    fprintf(yyout, "    MOV ax, @data\n");
+    fprintf(yyout, "    MOV ds, ax\n\n");
+
+    fprintf(yyout,a1.getASM().c_str());
+
+    fprintf(yyout,"MAIN ENDP\n");
+    fprintf(yyout,"END MAIN\n");
     table->Print(logout);
     fclose(yyout);
     fclose(yyin);
